@@ -1,1 +1,3 @@
-<p>Dashboard</p>
+@extends('layouts.dashboard.app')
+
+@section('title', 'Dashboard')

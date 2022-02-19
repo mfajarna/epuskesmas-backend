@@ -13,7 +13,10 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.5",
-        "shanmuga/laravel-entrust": "^2.2"
+        "realrashid/sweet-alert": "^5.0",
+        "shanmuga/laravel-entrust": "^2.2",
+        "yajra/laravel-datatables": "1.5",
+        "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

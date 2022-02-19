@@ -167,6 +167,8 @@ return [
          */
 
         Shanmuga\LaravelEntrust\LaravelEntrustServiceProvider::class,
+        \Yajra\DataTables\DataTablesServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -178,6 +180,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
+        
 
     ],
 
@@ -234,6 +237,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'LaravelEntrust'   => Shanmuga\LaravelEntrust\Facades\LaravelEntrustFacade::class,
+        'DataTables'    => \Yajra\DataTables\Facades\DataTablesServiceProvider::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
     ],
 
