@@ -14,7 +14,7 @@
                         <span data-key="t-dashboard">Dashboard</span>
                     </a>
                 </li>
-
+                <li class="menu-title" data-key="t-menu">Master</li>
                 <li>
                     <a href="{{ route('admin.poli.index')}}" >
                         <i data-feather="folder"></i>

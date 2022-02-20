@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\PasienController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Register Pasien
+    Route::post('pasien/register', [PasienController::class,'register']);
+
+    Route::middleware('auth:sanctum')->group(function(){
+
+        Route::post('pasien/detail_pasien', [PasienController::class, 'detail_pasien']);
+
+    });
