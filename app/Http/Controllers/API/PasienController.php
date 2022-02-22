@@ -47,6 +47,7 @@ class PasienController extends Controller
                 'foto_ktp'          => NULL,
                 'email'             => $validation['email'],
                 'password'          => Hash::make($validation['password']),
+                'is_verification'   => true,
                 // 'foto_ktp'          => $path_foto_ktp,
                 'device_token'      => $validation['device_token']
 
