@@ -44,6 +44,7 @@ class PasienController extends Controller
                 'jenis_kelamin'     => $validation['jenis_kelamin'],
                 'no_ktp'            => $validation['no_ktp'],
                 'no_handphone'      => $validation['no_handphone'],
+                'foto_ktp'          => NULL,
                 'email'             => $validation['email'],
                 'password'          => Hash::make($validation['password']),
                 // 'foto_ktp'          => $path_foto_ktp,
