@@ -28,13 +28,14 @@ class PasienController extends Controller
                 'no_handphone'      => 'required|string',
                 'email'             => 'required|email',
                 'password'          => 'required|string',
-                'foto_ktp'          => 'required|file:jpg,jpeg,png|max:2048',
+                // 'foto_ktp'          => 'required|file:jpg,jpeg,png|max:2048',
                 'device_token'      => 'required|string'
+                
 
 
             ]);
 
-            $path_foto_ktp = $request->file('foto_ktp')->store('assets/file/foto_ktp','public');
+            // $path_foto_ktp = $request->file('foto_ktp')->store('assets/file/foto_ktp','public');
 
             $pasien = ModelPasien::create([
                 'kode_pasien'       => $validation['kode_pasien'],
@@ -45,7 +46,7 @@ class PasienController extends Controller
                 'no_handphone'      => $validation['no_handphone'],
                 'email'             => $validation['email'],
                 'password'          => Hash::make($validation['password']),
-                'foto_ktp'          => $path_foto_ktp,
+                // 'foto_ktp'          => $path_foto_ktp,
                 'device_token'      => $validation['device_token']
 
             ]);
@@ -99,7 +100,7 @@ class PasienController extends Controller
     {
 
         try{
-            $find_code = ModelPasien::max('kode_transaksi');
+            $find_code = ModelPasien::max('kode_pasien');
         
             if($find_code)
             {
