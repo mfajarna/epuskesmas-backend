@@ -94,4 +94,28 @@ class PasienController extends Controller
 
         }
     }
+
+    public function generateKodePasien(Request $request)
+    {
+
+        try{
+            $find_code = ModelPasien::max('kode_transaksi');
+        
+            if($find_code)
+            {
+                $value_code = substr($find_code,13);
+                $code = (int) $value_code;
+                $code = $code + 1;
+                $return_value = "PASIEN/".str_pad($code,4,"0",STR_PAD_LEFT);
+            }else{
+                $return_value = "PASIEN/0001";
+            }
+    
+            return ResponseFormatter::success($return_value, 'Berhasil generate kode pasien');
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error($e->getMessage(),'Gagal Mengambil Kode Pasien');
+        }
+
+    }
 }

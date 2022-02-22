@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 // Register Pasien
     Route::post('pasien/register', [PasienController::class,'register']);
+    Route::get('pasien/getKodePasien', [PasienController::class, 'generateKodePasien']);
 
     Route::middleware('auth:sanctum')->group(function(){
 
