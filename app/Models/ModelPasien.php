@@ -37,7 +37,8 @@ class ModelPasien extends Authenticatable
         'is_verification',
         'email',
         'password',
-        'is_active'
+        'is_active',
+        'device_token'
     ];
 
     /**

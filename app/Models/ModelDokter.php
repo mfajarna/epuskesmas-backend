@@ -34,7 +34,8 @@ class ModelDokter extends Authenticatable
         'foto_dokter',
         'is_active',
         'email',
-        'password'
+        'password',
+        'device_token'
     ];
 
 

@@ -28,7 +28,8 @@ class PasienController extends Controller
                 'no_handphone'      => 'required|string',
                 'email'             => 'required|email',
                 'password'          => 'required|string',
-                'foto_ktp'          => 'required|file:jpg,jpeg,png|max:2048'
+                'foto_ktp'          => 'required|file:jpg,jpeg,png|max:2048',
+                'device_token'      => 'required|string'
 
 
             ]);
@@ -44,7 +45,8 @@ class PasienController extends Controller
                 'no_handphone'      => $validation['no_handphone'],
                 'email'             => $validation['email'],
                 'password'          => Hash::make($validation['password']),
-                'foto_ktp'          => $path_foto_ktp
+                'foto_ktp'          => $path_foto_ktp,
+                'device_token'      => $validation['device_token']
 
             ]);
 
