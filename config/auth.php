@@ -42,11 +42,11 @@ return [
         ],
         'pasien_m' => [
             'driver'    => 'session',
-            'provider'  => 'modelpasiens',
+            'provider'  => 'pasien_ms',
         ],
         'dokter_m'  => [
             'driver'    => 'session',
-            'provider'  => 'modeldokters'
+            'provider'  => 'dokter_ms'
         ]
     ],
 
@@ -72,6 +72,17 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        'pasien_ms' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ModelPasien::class,
+        ],
+
+        'dokter_ms' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ModelDokter::class,
+        ],
+
 
         // 'users' => [
         //     'driver' => 'database',
