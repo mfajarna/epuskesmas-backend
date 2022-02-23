@@ -31,8 +31,6 @@ class PasienController extends Controller
                 // 'foto_ktp'          => 'required|file:jpg,jpeg,png|max:2048',
                 'device_token'      => 'required|string'
                 
-
-
             ]);
 
             // $path_foto_ktp = $request->file('foto_ktp')->store('assets/file/foto_ktp','public');
@@ -106,7 +104,7 @@ class PasienController extends Controller
         
             if($find_code)
             {
-                $value_code = substr($find_code,13);
+                $value_code = substr($find_code,10);
                 $code = (int) $value_code;
                 $code = $code + 1;
                 $return_value = "PASIEN/".str_pad($code,4,"0",STR_PAD_LEFT);
