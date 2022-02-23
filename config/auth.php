@@ -42,11 +42,11 @@ return [
         ],
         'pasien_m' => [
             'driver'    => 'session',
-            'provider'  => 'pasien_ms',
+            'provider'  => 'modelpasiens',
         ],
         'dokter_m'  => [
             'driver'    => 'session',
-            'provider'  => 'dokter_ms'
+            'provider'  => 'modeldokters'
         ]
     ],
 
