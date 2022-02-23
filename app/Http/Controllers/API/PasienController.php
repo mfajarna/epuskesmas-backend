@@ -9,11 +9,56 @@ use App\Models\DetailPasienModel;
 use App\Models\ModelPasien;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class PasienController extends Controller
 {
     use PasswordValidationRules;
+
+
+
+    // Login Akun Pasien
+    public function login(Request $request)
+    {
+        try{
+            $request->validate([
+                'email' => 'email|required',
+                'password' => 'required'
+            ],[
+                'email.required' => 'Silahkan masukan email yang valid!',
+                'password.required' => 'Silahkan masukan password yang benar!'
+            ]);
+
+
+            $credentials = request(['email', 'password']);
+
+            if(!Auth::guard('pasien_m')->attempt($credentials)){
+                return ResponseFormatter::error([
+                   'message' => 'Unauthorized'
+                ], 'Authentication Failed', 500);
+            }
+
+            $user = ModelPasien::where('email', $request->email)->first();
+            if(!Hash::check($request->password, $user->password)){
+                throw new \Exception('Invalid Credentials');
+            }
+
+
+            $tokenResult = $user->createToken('authToken')->plainTextToken;
+            return ResponseFormatter::success([
+                'access_token' => $tokenResult,
+                'token_type' => 'Bearer',
+                'user' => $user
+            ], 'Authentication');
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error([
+                'message' => 'Something Went Wrong',
+                'error' => $e->getMessage(),
+            ], 'Authentication Failed', 500);
+        }
+    }
 
     // Register Akun Pasien
     public function register(Request $request)
