@@ -7,10 +7,13 @@ use App\Actions\Fortify\PasswordValidationRules;
 use App\Helpers\ResponseFormatter;
 use App\Models\DetailPasienModel;
 use App\Models\ModelPasien;
+use App\Models\ModelPoli;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class PasienController extends Controller
 {
@@ -163,5 +166,36 @@ class PasienController extends Controller
             return ResponseFormatter::error($e->getMessage(),'Gagal Mengambil Kode Pasien');
         }
 
+    }
+
+
+    public function updateFotoKtp(Request $request)
+    {
+        try{
+            $validator = Validator::make($request->all(), [
+                'file'  => 'required|image:jpeg,png,jpg|max:2048'
+            ]);
+
+            if($validator->fails())
+            {
+                return ResponseFormatter::error(['error'=>$validator->errors()], 'Gagal mengunggah foto', 401);
+            }
+
+            if($request->file('file'))
+            {
+                $file = $request->file->store('assets/ktp', 'public');
+
+                $ktp = ModelPoli::find(Auth::user()->id);
+                $ktp->foto_ktp = $file;
+
+                $ktp->update();
+
+
+                return ResponseFormatter::success([$file],'File successfully uploaded');
+            }
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error($e->getMessage(),'Something went wrong');
+        }
     }
 }

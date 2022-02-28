@@ -28,4 +28,6 @@ use Illuminate\Support\Facades\Route;
 
         Route::post('pasien/detail_pasien', [PasienController::class, 'detail_pasien']);
 
+        Route::post('pasien/updateFotoKtp', [PasienController::class,'updateFotoKtp']);
+
     });
