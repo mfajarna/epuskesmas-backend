@@ -8,6 +8,7 @@ use App\Helpers\ResponseFormatter;
 use App\Models\DetailPasienModel;
 use App\Models\ModelPasien;
 use App\Models\ModelPoli;
+use App\Models\ModelStatusVerifikasiKtp;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -185,11 +186,18 @@ class PasienController extends Controller
             {
                 $file = $request->file->store('assets/ktp', 'public');
 
+
+
                 $ktp = ModelPoli::find(Auth::user()->id);
                 $ktp->foto_ktp = $file;
 
                 $ktp->update();
 
+                $statusKtp = new ModelStatusVerifikasiKtp;
+                $statusKtp->pasien_id = Auth::user()->id;
+                $statusKtp->status = "Menunggu Konfirmasi";
+
+                $statusKtp->save();
 
                 return ResponseFormatter::success([$file],'File successfully uploaded');
             }

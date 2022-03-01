@@ -83,6 +83,11 @@ class ModelPasien extends Authenticatable
         return $this->hasOne(DetailPasienModel::class);
     }
 
+    public function verifikasi_status_ktp()
+    {
+        return $this->hasOne(ModelStatusVerifikasiKtp::class);
+    }
+
 
 
 
