@@ -188,12 +188,12 @@ class PasienController extends Controller
 
 
 
-                $ktp = ModelPoli::find(Auth::user()->id);
+                $ktp = ModelPoli::findOrFail(Auth::user()->id);
                 $ktp->foto_ktp = $file;
 
                 $ktp->update();
 
-                $statusKtp = new ModelStatusVerifikasiKtp;
+                $statusKtp = new ModelStatusVerifikasiKtp();
                 $statusKtp->pasien_id = Auth::user()->id;
                 $statusKtp->status = "Menunggu Konfirmasi";
 
