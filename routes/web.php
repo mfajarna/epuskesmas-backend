@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Poli\PoliController;
+use App\Http\Controllers\VerifikasiktpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,5 +31,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
             Route::resource('/poli', PoliController::class);
                 // Route Hapus
                 Route::get('remove-poli', [PoliController::class, 'delete']);
+
+            // Route Verifikasi KTP
+            Route::resource('/verifikasiktp', VerifikasiktpController::class);
+                Route::get('view-data-verifikasi', [VerifikasiktpController::class, 'fetchPasien'])->name('ktp.detail');
+                Route::get('ktp-update-status', [VerifikasiktpController::class, 'editStatus'])->name('ktp.editstatus');
         }
 );

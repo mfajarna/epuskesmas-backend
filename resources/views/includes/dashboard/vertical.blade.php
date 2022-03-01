@@ -24,37 +24,10 @@
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="users"></i>
-                        <span data-key="t-authentication">Authentication</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="auth-login.html" data-key="t-login">Login</a></li>
-                        <li><a href="auth-register.html" data-key="t-register">Register</a></li>
-                        <li><a href="auth-recoverpw.html" data-key="t-recover-password">Recover Password</a></li>
-                        <li><a href="auth-lock-screen.html" data-key="t-lock-screen">Lock Screen</a></li>
-                        <li><a href="auth-logout.html" data-key="t-logout">Log Out</a></li>
-                        <li><a href="auth-confirm-mail.html" data-key="t-confirm-mail">Confirm Mail</a></li>
-                        <li><a href="auth-email-verification.html" data-key="t-email-verification">Email Verification</a></li>
-                        <li><a href="auth-two-step-verification.html" data-key="t-two-step-verification">Two Step Verification</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow">
+                    <a href="{{ route('admin.verifikasiktp.index') }}">
                         <i data-feather="file-text"></i>
-                        <span data-key="t-pages">Pages</span>
+                        <span data-key="t-pages">Konfirmasi KTP</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="pages-starter.html" data-key="t-starter-page">Starter Page</a></li>
-                        <li><a href="pages-maintenance.html" data-key="t-maintenance">Maintenance</a></li>
-                        <li><a href="pages-comingsoon.html" data-key="t-coming-soon">Coming Soon</a></li>
-                        <li><a href="pages-timeline.html" data-key="t-timeline">Timeline</a></li>
-                        <li><a href="pages-faqs.html" data-key="t-faqs">FAQs</a></li>
-                        <li><a href="pages-pricing.html" data-key="t-pricing">Pricing</a></li>
-                        <li><a href="pages-404.html" data-key="t-error-404">Error 404</a></li>
-                        <li><a href="pages-500.html" data-key="t-error-500">Error 500</a></li>
-                    </ul>
                 </li>
 
                 <li>
