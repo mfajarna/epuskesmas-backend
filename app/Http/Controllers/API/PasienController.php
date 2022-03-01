@@ -7,7 +7,6 @@ use App\Actions\Fortify\PasswordValidationRules;
 use App\Helpers\ResponseFormatter;
 use App\Models\DetailPasienModel;
 use App\Models\ModelPasien;
-use App\Models\ModelPoli;
 use App\Models\ModelStatusVerifikasiKtp;
 use App\Models\User;
 use Exception;
@@ -188,7 +187,7 @@ class PasienController extends Controller
 
 
 
-                $ktp = ModelPoli::findOrFail(Auth::user()->id);
+                $ktp = ModelPasien::findOrFail(Auth::user()->id);
                 $ktp->foto_ktp = $file;
 
                 $ktp->update();
