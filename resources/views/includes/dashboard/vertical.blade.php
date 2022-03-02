@@ -11,6 +11,7 @@
                 <li>
                     <a href="{{ route('admin.dashboard.index') }}">
                         <i data-feather="home"></i>
+                        
                         <span data-key="t-dashboard">Dashboard</span>
                     </a>
                 </li>
@@ -26,6 +27,7 @@
                 <li>
                     <a href="{{ route('admin.verifikasiktp.index') }}">
                         <i data-feather="file-text"></i>
+                        <span class="badge rounded-pill bg-soft-danger text-danger float-end">7</span>
                         <span data-key="t-pages">Konfirmasi KTP</span>
                     </a>
                 </li>

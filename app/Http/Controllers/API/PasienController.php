@@ -173,12 +173,12 @@ class PasienController extends Controller
     {
         try{
             $validator = Validator::make($request->all(), [
-                'file'  => 'required|image:jpeg,png,jpg|max:2048'
+                'file'  => 'image:jpeg,png,jpg|max:2048'
             ]);
 
             if($validator->fails())
             {
-                return ResponseFormatter::error(['error'=>$validator->errors()], 'Gagal mengunggah foto', 401);
+                return ResponseFormatter::error(['error'=> $validator->errors()], 'Gagal mengunggah foto', 401);
             }
 
             if($request->file('file'))
