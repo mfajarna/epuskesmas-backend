@@ -212,7 +212,7 @@ class PasienController extends Controller
         try{
             $id = $request->id;
 
-            $model = ModelPasien::with('verifikasi_status_ktp')->where('id', '=', Auth::user()->id)->get();
+            $model = ModelPasien::with('verifikasiKtp')->where('id', '=', Auth::user()->id)->get();
 
             // $arrModel = [];
 
