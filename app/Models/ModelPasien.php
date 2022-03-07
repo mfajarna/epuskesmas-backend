@@ -83,9 +83,9 @@ class ModelPasien extends Authenticatable
         return $this->hasOne(DetailPasienModel::class);
     }
 
-    public function verifikasiKtp()
+    public function ktp()
     {
-        return $this->hasOne(ModelStatusVerifikasiKtp::class, 'id');
+        return $this->hasOne(ModelStatusVerifikasiKtp::class);
     }
 
 

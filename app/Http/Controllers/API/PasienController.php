@@ -212,7 +212,7 @@ class PasienController extends Controller
         try{
             $id = $request->id;
 
-            $model = ModelPasien::with('verifikasiKtp')->where('id', '=', Auth::user()->id)->get();
+            $model = ModelPasien::with(['ktp'])->where('id', '=', Auth::user()->id)->get();
 
             // $arrModel = [];
 
@@ -233,7 +233,7 @@ class PasienController extends Controller
     public function pasien(Request $request)
     {
         try{
-            $model= ModelPasien::with('verifikasiKtp')->latest()->get();
+            $model= ModelPasien::with(['ktp'])->latest()->get();
 
 
             return ResponseFormatter::success($model,'Sukses mengambil data');
