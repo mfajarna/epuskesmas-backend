@@ -229,4 +229,17 @@ class PasienController extends Controller
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
         }
     }
+
+    public function pasien(Request $request)
+    {
+        try{
+            $model= ModelPasien::with('verifikasiKtp')->latest()->get();
+
+
+            return ResponseFormatter::success($model,'Sukses mengambil data');
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error($e->getMessage(),'Something went wrong');
+        }
+    }
 }
