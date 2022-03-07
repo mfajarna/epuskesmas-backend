@@ -212,7 +212,7 @@ class PasienController extends Controller
         try{
             $id = $request->id;
 
-            $model = ModelPasien::with('verifikasi_status_ktp')->where('id', $id)->first();
+            $model = ModelPasien::with('verifikasi_status_ktp')->where('id', $id)->get();
 
 
             return ResponseFormatter::success($model,'Sukses mengambil data');
