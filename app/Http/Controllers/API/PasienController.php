@@ -212,10 +212,18 @@ class PasienController extends Controller
         try{
             $id = $request->id;
 
-            $model = ModelPasien::with('verifikasi_status_ktp')->where('id', $id)->get();
+            $model = ModelPasien::with('verifikasi_status_ktp')->where('id', '=', Auth::user()->id)->get();
+
+            $arrModel = [];
+
+            foreach($model as $data)
+            {
+                array_push($arrModel, $data['verifikasi_status_ktp']['status']);
+            }
+            
 
 
-            return ResponseFormatter::success($model,'Sukses mengambil data');
+            return ResponseFormatter::success($arrModel,'Sukses mengambil data');
         }catch(Exception $e)
         {
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
