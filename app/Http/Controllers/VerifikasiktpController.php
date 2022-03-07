@@ -147,7 +147,7 @@ class VerifikasiktpController extends Controller
         $model = ModelStatusVerifikasiKtp::where('pasien_id', $id)->update(["status" => 'Sudah Konfirmasi']);
 
         return response()->json($model);
-        toast()->error('Berhasil update status KTP');
+        toast()->success('Berhasil update status KTP');
         
     }
 }

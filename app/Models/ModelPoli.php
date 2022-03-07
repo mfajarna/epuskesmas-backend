@@ -16,4 +16,9 @@ class ModelPoli extends Model
         'desc_poli',
         'status'
     ];
+
+    public function antrian()
+    {
+        return $this->hasOne(ModelAntrian::class);
+    }
 }

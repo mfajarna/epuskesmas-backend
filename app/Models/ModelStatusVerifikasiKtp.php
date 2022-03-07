@@ -19,7 +19,7 @@ class ModelStatusVerifikasiKtp extends Model
 
     public function pasien()
     {
-        return $this->belongsTo(ModelPasien::class);
+        return $this->belongsTo(ModelPasien::class, 'pasien_id');
     }
 
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Poli;
 
 use App\Http\Controllers\Controller;
+use App\Models\ModelAntrian;
 use App\Models\ModelPoli;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
@@ -69,6 +70,13 @@ class PoliController extends Controller
         $poli->is_active = 1;
         
         $poli->save();
+
+        $antrian = new ModelAntrian();
+        $antrian->id_poli = $poli->id;
+        $antrian->status = 'non-active';
+        $antrian->no_antrian = 0;
+
+        $antrian->save();
 
         if($poli)
         {

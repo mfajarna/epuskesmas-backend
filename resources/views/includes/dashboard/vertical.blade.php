@@ -39,12 +39,20 @@
                     </a>
                 </li>
 
-                <li class="menu-title mt-2" data-key="t-components">Setting</li>
+                <li class="menu-title mt-2" data-key="t-components">Konfigurasi</li>
 
                 <li>
                     <a href="javascript: void(0);">
                         <i data-feather="sliders"></i>
                         <span data-key="t-components">Website Setting</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="{{ route('admin.antrian.index') }}">
+                        <i data-feather="sliders"></i>
+                        <span data-key="t-components">Antrian Poli</span>
                     </a>
                 </li>
 
