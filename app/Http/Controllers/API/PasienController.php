@@ -213,9 +213,14 @@ class PasienController extends Controller
         try{
             $id = $request->id;
 
-            $model = ModelPasien::with(['ktp'])->where('id', '=', Auth::user()->id)->get();
+            $model= ModelPasien::with(['ktp'])->latest()->get();
+
+            $status_ktp = $model['ktp'];
+
+            return ResponseFormatter::success($status_ktp,'Sukses mengambil data');
 
 
+            
             // $arrModel = [];
 
             // foreach($model as $data)
@@ -223,9 +228,6 @@ class PasienController extends Controller
             //     array_push($arrModel, $data['verifikasi_status_ktp']['status']);
             // }
             
-
-
-            return ResponseFormatter::success($model,'Sukses mengambil data');
         }catch(Exception $e)
         {
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
