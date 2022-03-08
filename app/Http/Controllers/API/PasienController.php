@@ -213,14 +213,8 @@ class PasienController extends Controller
         try{
             $id = $request->id;
 
-            // $model = ModelPasien::with(['ktp'])->where('id', '=', Auth::user()->id)->get();
+            $model = ModelPasien::with(['ktp'])->where('id', '=', Auth::user()->id)->get();
 
-            $model = DB::table('tb_pasien')
-                        ->join('tb_status_verifikasi_ktp', 'tb_pasien.id', '=', 'tb_status_verifikasi_ktp.pasien_id')
-                        ->where('id', Auth::user()->id)
-                        ->select(
-                            'tb_status_verifikasi_ktp.status'
-                        )->get();
 
             // $arrModel = [];
 

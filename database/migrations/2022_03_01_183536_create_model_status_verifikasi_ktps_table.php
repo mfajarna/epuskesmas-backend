@@ -21,7 +21,7 @@ class CreateModelStatusVerifikasiKtpsTable extends Migration
                 ->onUpdate('cascade')->onDelete('cascade');
 
 
-            $table->string('status')->nullable('');
+            $table->string('status')->nullable();
 
             $table->timestamps();
         });
