@@ -237,8 +237,9 @@ class PasienController extends Controller
         try{
             $model= ModelPasien::with(['ktp'])->latest()->get();
 
+            $status_ktp = $model['ktp'];
 
-            return ResponseFormatter::success($model,'Sukses mengambil data');
+            return ResponseFormatter::success($status_ktp,'Sukses mengambil data');
         }catch(Exception $e)
         {
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
