@@ -215,19 +215,15 @@ class PasienController extends Controller
 
             $model= ModelPasien::with(['ktp'])->latest()->get();
 
-            $status_ktp = $model['ktp'];
+        
+            $arrModel = [];
 
-            return ResponseFormatter::success($status_ktp,'Sukses mengambil data');
-
-
+            foreach($model as $data)
+            {
+                array_push($arrModel, $data['ktp']['status']);
+            }
             
-            // $arrModel = [];
-
-            // foreach($model as $data)
-            // {
-            //     array_push($arrModel, $data['verifikasi_status_ktp']['status']);
-            // }
-            
+            return ResponseFormatter::success($arrModel,'Sukses mengambil data');
         }catch(Exception $e)
         {
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
