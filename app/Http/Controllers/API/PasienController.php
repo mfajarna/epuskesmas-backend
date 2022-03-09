@@ -211,10 +211,11 @@ class PasienController extends Controller
     public function fetchKtpPasien(Request $request)
     {
         try{
-            $id = $request->id;
 
-            $model= ModelPasien::with(['ktp'])
-                                ->where('id', Auth::user()->id)
+            $id = Auth::user()->id;
+
+               $model= ModelPasien::with(['ktp'])
+                                ->where('id', $id)
                                 ->latest()
                                 ->get();
 

@@ -37,3 +37,4 @@ use Illuminate\Support\Facades\Route;
 
 
     Route::get('pasien/fetch', [PasienController::class, 'pasien']);
+  
