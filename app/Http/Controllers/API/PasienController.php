@@ -214,20 +214,20 @@ class PasienController extends Controller
 
             $id = Auth::user()->id;
 
-               $model= ModelPasien::with(['ktp'])
+            $model= ModelPasien::with('ktp')
                                 ->where('id', $id)
                                 ->latest()
                                 ->get();
 
         
-            $arrModel = [];
+            // $arrModel = [];
 
-            foreach($model as $data)
-            {
-                array_push($arrModel, $data['ktp']['status']);
-            }
+            // foreach($model as $data)
+            // {
+            //     array_push($arrModel, $data['ktp']['status']);
+            // }
             
-            return ResponseFormatter::success($model,'Sukses mengambil data');
+            return ResponseFormatter::success($id,'Sukses mengambil data');
         }catch(Exception $e)
         {
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
