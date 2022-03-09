@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Actions\Fortify\PasswordValidationRules;
 use App\Helpers\ResponseFormatter;
+use App\Http\Controllers\Antrian\AntrianController;
 use App\Models\DetailPasienModel;
 use App\Models\ModelPasien;
 use App\Models\ModelStatusVerifikasiKtp;
@@ -213,11 +214,8 @@ class PasienController extends Controller
         try{
 
             $id = Auth::user()->id;
-
-            $model= ModelPasien::with('ktp')
-                                ->where('id', $id)
-                                ->latest()
-                                ->get();
+            
+            $model = ModelStatusVerifikasiKtp::where('pasien_id', $id)->first();
 
         
             // $arrModel = [];
