@@ -213,7 +213,10 @@ class PasienController extends Controller
         try{
             $id = $request->id;
 
-            $model= ModelPasien::with(['ktp'])->latest()->get();
+            $model= ModelPasien::with(['ktp'])
+                                ->where('id', Auth::user()->id)
+                                ->latest()
+                                ->get();
 
         
             $arrModel = [];
