@@ -227,7 +227,7 @@ class PasienController extends Controller
                 array_push($arrModel, $data['ktp']['status']);
             }
             
-            return ResponseFormatter::success($arrModel,'Sukses mengambil data');
+            return ResponseFormatter::success($model,'Sukses mengambil data');
         }catch(Exception $e)
         {
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
