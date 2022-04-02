@@ -41,8 +41,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
 
             // Route Antrian
             Route::resource('antrian', AntrianController::class);
-            Route::get('/edit-status', [AntrianController::class, 'editStatus'])->name('antrian.editstatus');
-            Route::get('/reset-antrian', [AntrianController::class, 'resetAntrian'])->name('antrian.reset');
-            Route::get('/next-antrian', [AntrianController::class, 'nextAntrian'])->name('antrian.next');
+                Route::get('/edit-status', [AntrianController::class, 'editStatus'])->name('antrian.editstatus');
+                Route::get('/reset-antrian', [AntrianController::class, 'resetAntrian'])->name('antrian.reset');
+                Route::get('/next-antrian', [AntrianController::class, 'nextAntrian'])->name('antrian.next');
+
+
         }
 );

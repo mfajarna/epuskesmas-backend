@@ -245,4 +245,22 @@ class PasienController extends Controller
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
         }
     }
+
+    public function getStatusVerifikasiKtp(Request $request)
+    {
+        try{
+            $id = $request->id;
+
+            $model =  ModelStatusVerifikasiKtp::where('pasien_id', $id)
+                                  ->select('status')
+                                  ->first();
+
+            
+            return ResponseFormatter::success($model,'Sukses mengambil data status verifikasi');
+                
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error($e->getMessage(),'Something went wrong');
+        }
+    }
 }
