@@ -20,15 +20,7 @@ class CreateModelDoktersTable extends Migration
             $table->string('nama_dokter')->nullable();
             $table->string('jenis_kelamin')->nullable();
             $table->string('spesialis')->nullable();
-            $table->string('foto_dokter', 2048)->nullable();
-
-
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('email')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-
-            $table->boolean('is_active')->default(0);
+            $table->string('tanggal_lahir')->nullable();
 
             $table->timestamps();
         });

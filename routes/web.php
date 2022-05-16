@@ -3,6 +3,8 @@
 use App\Http\Controllers\Antrian\AntrianController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\KiosController;
+use App\Http\Controllers\PendaftaranPemeriksaanController;
 use App\Http\Controllers\Poli\PoliController;
 use App\Http\Controllers\VerifikasiktpController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
     return view('auth.login');
 });
+
+Route::resource('/cek-antrian', KiosController::class);
 
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
@@ -45,6 +49,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
                 Route::get('/reset-antrian', [AntrianController::class, 'resetAntrian'])->name('antrian.reset');
                 Route::get('/next-antrian', [AntrianController::class, 'nextAntrian'])->name('antrian.next');
 
-
+            // Pendaftaran Pasien
+            Route::resource('pendaftaran-pemeriksaan', PendaftaranPemeriksaanController::class);
+                Route::get('pendaftaran-pemeriksaan/pendaftaran/{id_poli}/{nama_poli}', [PendaftaranPemeriksaanController::class, 'pendaftaran'])->name('pendaftaran-pemeriksaan.pendaftaran');
         }
 );

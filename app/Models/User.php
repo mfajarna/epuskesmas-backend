@@ -21,6 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
         'role'
     ];
@@ -43,4 +44,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function dokter()
+    {
+        return $this->hasOne(ModelDokter::class, 'id');
+    }
+
+    public function pemeriksaan()
+    {
+        return $this->hasMany(ModelPemeriksaan::class, 'id');
+    }
 }

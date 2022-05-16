@@ -23,7 +23,8 @@ class UserTableSeeder extends Seeder
                 'role'              => 'superadmin', // Superadmin
                 'remember_token'    => NULL,
                 'created_at'        => date('Y-m-d h:i:s'),
-                'updated_at'        => date('Y-m-d h:i:s')
+                'updated_at'        => date('Y-m-d h:i:s'),
+                'username'          => 'superadmin',
             ],
             [
                 'name'              => 'Admin',
@@ -32,7 +33,18 @@ class UserTableSeeder extends Seeder
                 'role'              => 'admin1', // Admin 
                 'remember_token'    => NULL,
                 'created_at'        => date('Y-m-d h:i:s'),
-                'updated_at'        => date('Y-m-d h:i:s')
+                'updated_at'        => date('Y-m-d h:i:s'),
+                'username'          => 'admin',
+            ],
+            [
+                'name'              => 'dr. Yesicca Juliane Chandra',
+                'email'             => 'yessicajuliane@puskesmas.com',
+                'password'          => Hash::make('Dokter@123'),
+                'role'              => 'dokter', // Admin 
+                'remember_token'    => NULL,
+                'created_at'        => date('Y-m-d h:i:s'),
+                'updated_at'        => date('Y-m-d h:i:s'),
+                'username'          => 'yesiccajuliane',
             ],
         ];
 
