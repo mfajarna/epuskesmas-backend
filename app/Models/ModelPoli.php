@@ -21,4 +21,9 @@ class ModelPoli extends Model
     {
         return $this->hasOne(ModelAntrian::class);
     }
+
+    public function pemeriksaan()
+    {
+        return $this->hasOne(ModelPemeriksaan::class);
+    }
 }

@@ -49,19 +49,29 @@
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="home1" role="tabpanel">
+
+                        @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger alert-border-left alert-dismissible fade show" role="alert">
+                                    <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - {{ $error }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                        @endforeach
+
+                        @endif
                         <form method="POST" action={{ route('admin.pendaftaran-pemeriksaan.store') }}>
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label" for="validationCustom01">No Urut</label>
-                                        <input type="text" name="no_antrian" class="form-control" id="validationCustom01" placeholder="No Urut" required="" value="{{ $no_antrian }}" disabled>
+                                        <input type="text" name="no_antrian" class="form-control" id="validationCustom01" placeholder="No Urut" value="{{ $no_antrian }}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label" for="validationCustom02">Tanggal Periksa</label>
-                                        <input type="text" name="tgl_periksa" class="form-control" id="validationCustom02" placeholder="Tanggal" value="{{ $date }}" required disabled>
+                                        <input type="text" name="tgl_periksa" class="form-control" id="validationCustom02" placeholder="Tanggal" value="{{ $date }}" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -69,13 +79,13 @@
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label">Status</label>
-                                        <input type="text" name="status" class="form-control" id="validationCustom04" value="bpjs" placeholder="status" required="" disabled>
+                                        <input type="text" name="status" class="form-control" id="validationCustom04" value="bpjs" placeholder="status" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label class="form-label" for="validationCustom04">Nama Dokter</label>
-                                        <input type="text" name="nama_dokter" class="form-control" id="validationCustom04" value="{{ $nama_dokter }}" placeholder="Nama Dokter" required="" disabled>
+                                        <input type="text" name="nama_dokter" class="form-control" id="validationCustom04" value="{{ $nama_dokter }}" placeholder="Nama Dokter" required="" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -105,17 +115,19 @@
                                     <!-- Tab panes -->
                                     <div class="tab-content text-muted">
                                         <div class="tab-pane active" id="home3" role="tabpanel">
+                                            <input type="hidden" name="jenis_kunjungan" value="kunjungan_baru" class="form-control" id="validationCustom04" placeholder="Nama Pasien" required>
+                                            <input type="hidden" name="id_poli" value="{{ $id_poli }}" class="form-control" id="validationCustom04" placeholder="Nama Pasien" required>
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom04">Nama Pasien</label>
-                                                        <input type="text" class="form-control" id="validationCustom04" placeholder="Nama Pasien" required>
+                                                        <input type="text" name="nama_pasien" value="{{ old('nama_pasien') }}" class="form-control" id="validationCustom04" placeholder="Nama Pasien" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom04">Umur</label>
-                                                        <input type="number" class="form-control" id="validationCustom04" placeholder="Umur Pasien" required>
+                                                        <input type="number" name="umur" value="{{ old('umur') }}" class="form-control" id="validationCustom04" placeholder="Umur Pasien" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -129,24 +141,33 @@
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
                                                         <label class="form-label">Jenis Kelamin</label>
-                                                        <select class="form-select">
-                                                            <option>Laki-Laki</option>
-                                                            <option>Perempuan</option>
+                                                        <select name="jenis_kelamin" class="form-select">
+                                                            <option value="laki-laki">Laki-Laki</option>
+                                                            <option value="perempuan">Perempuan</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom04">No Handphone</label>
-                                                        <input type="number" name="no_handphone" class="form-control" id="validationCustom04" placeholder="No Handphone" required>
+                                                        <label class="form-label" for="validationCustom04">No KTP</label>
+                                                        <input type="number" name="no_ktp" value="{{ old('no_ktp') }}" class="form-control" id="validationCustom04" placeholder="No Ktp" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom04">Email</label>
-                                                        <input type="email" name="email" class="form-control" id="validationCustom04" placeholder="Email" required>
+                                                        <input type="email" name="email" value="{{ old('email') }}" class="form-control" id="validationCustom04" placeholder="Email" required>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom04">No Handphone</label>
+                                                        <input type="number" name="no_handphone" value="{{ old('no_handphone') }}" class="form-control" id="validationCustom04" placeholder="No Handphone" required>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="profile3" role="tabpanel">
@@ -168,37 +189,40 @@
                         </form>
                     </div>
                     <div class="tab-pane" id="profile1" role="tabpanel">
-                        <p class="mb-0">
-                            Food truck fixie locavore, accusamus mcsweeney's marfa nulla
-                            single-origin coffee squid. Exercitation +1 labore velit, blog
-                            sartorial PBR leggings next level wes anderson artisan four loko
-                            farm-to-table craft beer twee. Qui photo booth letterpress,
-                            commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
-                            vinyl cillum PBR. Homo nostrud organic, assumenda labore
-                            aesthetic magna delectus.
-                        </p>
-                    </div>
-                    <div class="tab-pane" id="messages1" role="tabpanel">
-                        <p class="mb-0">
-                            Etsy mixtape wayfarers, ethical wes anderson tofu before they
-                            sold out mcsweeney's organic lomo retro fanny pack lo-fi
-                            farm-to-table readymade. Messenger bag gentrify pitchfork
-                            tattooed craft beer, iphone skateboard locavore carles etsy
-                            salvia banksy hoodie helvetica. DIY synth PBR banksy irony.
-                            Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh
-                            mi whatever gluten-free carles.
-                        </p>
-                    </div>
-                    <div class="tab-pane" id="settings1" role="tabpanel">
-                        <p class="mb-0">
-                            Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
-                            art party before they sold out master cleanse gluten-free squid
-                            scenester freegan cosby sweater. Fanny pack portland seitan DIY,
-                            art party locavore wolf cliche high life echo park Austin. Cred
-                            vinyl keffiyeh DIY salvia PBR, banh mi before they sold out
-                            farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral,
-                            mustache readymade keffiyeh craft.
-                        </p>
+                        <form method="POST" action={{ route('admin.pendaftaran-pemeriksaan.store') }}>
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="validationCustom01">No Urut</label>
+                                        <input type="text" name="no_antrian" class="form-control" id="validationCustom01" placeholder="No Urut" required="" value="{{ $no_antrian }}" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="validationCustom02">Tanggal Periksa</label>
+                                        <input type="text" name="tgl_periksa" class="form-control" id="validationCustom02" placeholder="Tanggal" value="{{ $date }}" required readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Status</label>
+                                        <input type="text" name="status" class="form-control" id="validationCustom04" value="bpjs" placeholder="status" required="" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="validationCustom04">Nama Dokter</label>
+                                        <input type="text" name="nama_dokter" class="form-control" id="validationCustom04" value="{{ $nama_dokter }}" placeholder="Nama Dokter" required="" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-primary" type="submit">Submit Pendaftaran</button>
+                        </form>
                     </div>
                 </div>
             </div><!-- end card-body -->

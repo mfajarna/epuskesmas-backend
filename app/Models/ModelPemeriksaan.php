@@ -13,6 +13,7 @@ class ModelPemeriksaan extends Model
 
     protected $fillable = [
         'id_pasien',
+        'id_poli',
         'no_urut',
         'umur',
         'status',
@@ -28,5 +29,10 @@ class ModelPemeriksaan extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'corrected_by');
+    }
+
+    public function poli()
+    {
+        return $this->belongsTo(ModelPoli::class, 'id_poli');
     }
 }
