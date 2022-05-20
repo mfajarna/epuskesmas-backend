@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\PasienController;
+use App\Http\Controllers\API\PendaftaranPemeriksaanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,9 @@ use Illuminate\Support\Facades\Route;
         Route::post('pasien/updateFotoKtp', [PasienController::class,'updateFotoKtp']);
         Route::get('pasien/fetchKtp', [PasienController::class, 'fetchKtpPasien']);
         Route::get('pasien/fetchStatusKtp', [PasienController::class, 'getStatusVerifikasiKtp']);
+
+        // Route Pendaftaran Pemeriksaan
+        Route::get('pendaftaran/cek-antrian-poli', [PendaftaranPemeriksaanController::class, 'getListPoli']);
 
 
     });
