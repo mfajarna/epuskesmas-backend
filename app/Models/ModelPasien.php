@@ -93,4 +93,9 @@ class ModelPasien extends Authenticatable
         return $this->hasOne(ModelPemeriksaan::class, 'id');
     }
 
+    public function hasilPemeriksaan()
+    {
+        return $this->hasOne(ModelHasilPemeriksaan::class, 'id');
+    }
+
 }

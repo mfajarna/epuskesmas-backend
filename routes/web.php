@@ -4,6 +4,7 @@ use App\Http\Controllers\Antrian\AntrianController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\KiosController;
+use App\Http\Controllers\PemeriksaanDokterController;
 use App\Http\Controllers\PendaftaranPemeriksaanController;
 use App\Http\Controllers\Poli\PoliController;
 use App\Http\Controllers\VerifikasiktpController;
@@ -55,5 +56,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
             Route::resource('pendaftaran-pemeriksaan', PendaftaranPemeriksaanController::class);
                 Route::get('pendaftaran-pemeriksaan/pendaftaran/{id_poli}/{nama_poli}', [PendaftaranPemeriksaanController::class, 'pendaftaran'])->name('pendaftaran-pemeriksaan.pendaftaran');
                 Route::post('/autocomplete-search', [PendaftaranPemeriksaanController::class, 'autocompleteSearch'])->name('autocomplete.pasien');
+
+            // Dokter
+            Route::resource('pemeriksaandokter', PemeriksaanDokterController::class);
+                Route::get('pemeriksaandokter/pemeriksaan/{id_poli}/{nama_poli}', [PemeriksaanDokterController::class, 'pemeriksaan'])->name('pemeriksaandokter.pemeriksaan');
+                Route::get('datapemeriksaan/{id}', [PemeriksaanDokterController::class, 'dataPemeriksaan']);
         }
 );

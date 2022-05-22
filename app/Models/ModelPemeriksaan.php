@@ -18,7 +18,8 @@ class ModelPemeriksaan extends Model
         'umur',
         'status',
         'corrected_by',
-        'kunjungan'
+        'kunjungan',
+        'status_pemeriksaan'
     ];
 
     public function pasien()
@@ -35,4 +36,10 @@ class ModelPemeriksaan extends Model
     {
         return $this->belongsTo(ModelPoli::class, 'id_poli');
     }
+
+    public function hasilPemeriksaan()
+    {
+        return $this->hasOne(ModelHasilPemeriksaan::class);
+    }
+
 }

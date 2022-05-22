@@ -118,6 +118,7 @@ class PendaftaranPemeriksaanController extends Controller
                 $pemeriksaan->corrected_by = Auth::user()->id;
                 $pemeriksaan->kunjungan = $jenis_kunjungan;
                 $pemeriksaan->id_poli = $id_poli;
+                $pemeriksaan->status_pemeriksaan = "MENUNGGU";
                 $pemeriksaan->save();
     
                 if($user && $pasien && $pemeriksaan)
@@ -146,6 +147,7 @@ class PendaftaranPemeriksaanController extends Controller
                 $pemeriksaan->corrected_by = Auth::user()->id;
                 $pemeriksaan->kunjungan = $jenis_kunjungan_lama;
                 $pemeriksaan->id_poli = $id_poli;
+                $pemeriksaan->status_pemeriksaan = "MENUNGGU";
                 $pemeriksaan->save();
     
                 if($pemeriksaan)
@@ -212,6 +214,7 @@ class PendaftaranPemeriksaanController extends Controller
                 $pemeriksaan->corrected_by = Auth::user()->id;
                 $pemeriksaan->kunjungan = $jenis_kunjungan;
                 $pemeriksaan->id_poli = $id_poli;
+                $pemeriksaan->status_pemeriksaan = "MENUNGGU";
                 $pemeriksaan->save();
     
                 if($user && $pasien && $pemeriksaan)
@@ -240,6 +243,7 @@ class PendaftaranPemeriksaanController extends Controller
                 $pemeriksaan->corrected_by = Auth::user()->id;
                 $pemeriksaan->kunjungan = $request->jenis_kunjungan_lama_umum;
                 $pemeriksaan->id_poli = $id_poli;
+                $pemeriksaan->status_pemeriksaan = "MENUNGGU";
                 $pemeriksaan->save();
     
                 if($pemeriksaan)
@@ -254,8 +258,6 @@ class PendaftaranPemeriksaanController extends Controller
                 }
             }
         }
-
-
     }
 
     /**
@@ -324,7 +326,7 @@ class PendaftaranPemeriksaanController extends Controller
         }
 
         $namaAntrian = implode(' ', $first_name). implode(' ', $second_name);
-        $find_code = ModelPemeriksaan::max('no_urut');
+        $find_code = ModelPemeriksaan::where('id_poli', $id_poli)->max('no_urut');
         
         if($find_code)
         {
