@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ModelAntrian;
 use App\Models\ModelPasien;
 use App\Models\ModelPemeriksaan;
+use App\Models\ModelStatusVerifikasiKtp;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -120,8 +121,19 @@ class PendaftaranPemeriksaanController extends Controller
                 $pemeriksaan->id_poli = $id_poli;
                 $pemeriksaan->status_pemeriksaan = "MENUNGGU";
                 $pemeriksaan->save();
+
+                // check if verifikasi was added
+                $verifikasiKtp = ModelStatusVerifikasiKtp::where('id_pasien', $pasien->id)->first();
+
+                if(!$verifikasiKtp)
+                {
+                    $modelVerifikasi = new ModelStatusVerifikasiKtp();
+                    $modelVerifikasi->pasien_id = $pasien->id;
+                    $modelVerifikasi->status ="";
+                    $modelVerifikasi->save();
+                }
     
-                if($user && $pasien && $pemeriksaan)
+                if($user && $pasien && $pemeriksaan && $modelVerifikasi)
                 {
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru');
         
@@ -216,8 +228,20 @@ class PendaftaranPemeriksaanController extends Controller
                 $pemeriksaan->id_poli = $id_poli;
                 $pemeriksaan->status_pemeriksaan = "MENUNGGU";
                 $pemeriksaan->save();
+
+                // check if verifikasi was added
+                $verifikasiKtp = ModelStatusVerifikasiKtp::where('id_pasien', $pasien->id)->first();
+
+                if(!$verifikasiKtp)
+                {
+                    $modelVerifikasi = new ModelStatusVerifikasiKtp();
+                    $modelVerifikasi->pasien_id = $pasien->id;
+                    $modelVerifikasi->status ="";
+                    $modelVerifikasi->save();
+                }
+                    
     
-                if($user && $pasien && $pemeriksaan)
+                if($user && $pasien && $pemeriksaan && $modelVerifikasi)
                 {
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru Umum');
         
