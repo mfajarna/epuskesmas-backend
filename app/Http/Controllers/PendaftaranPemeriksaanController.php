@@ -123,7 +123,7 @@ class PendaftaranPemeriksaanController extends Controller
                 $pemeriksaan->save();
 
                 // check if verifikasi was added
-                $verifikasiKtp = ModelStatusVerifikasiKtp::where('id_pasien', $pasien->id)->first();
+                $verifikasiKtp = ModelStatusVerifikasiKtp::where('pasien_id', $pasien->id)->first();
 
                 if(!$verifikasiKtp)
                 {
@@ -230,7 +230,7 @@ class PendaftaranPemeriksaanController extends Controller
                 $pemeriksaan->save();
 
                 // check if verifikasi was added
-                $verifikasiKtp = ModelStatusVerifikasiKtp::where('id_pasien', $pasien->id)->first();
+                $verifikasiKtp = ModelStatusVerifikasiKtp::where('pasien_id', $pasien->id)->first();
 
                 if(!$verifikasiKtp)
                 {
