@@ -142,7 +142,7 @@ class PasienController extends Controller
             return ResponseFormatter::success('Berhasil Membuat data detail pasien', $detail_pasien);
         }catch(Exception $e)
         {
-
+            return ResponseFormatter::error($e->getMessage(),'Gagal Mengambil Kode Pasien');
         }
     }
 
@@ -193,12 +193,19 @@ class PasienController extends Controller
 
                 $ktp->update();
 
-                $statusKtp = new ModelStatusVerifikasiKtp();
-                $statusKtp->pasien_id = Auth::user()->id;
-                $statusKtp->status = "Menunggu Konfirmasi";
+                $cekModelStatus = ModelStatusVerifikasiKtp::where('pasien_id', Auth::user()->id)->first();
 
-                $statusKtp->save();
-
+                if($cekModelStatus)
+                {
+                    $cekModelStatus->status = "Menunggu Konfirmasi";
+                    $cekModelStatus->save();
+                }else{
+                    $statusKtp = new ModelStatusVerifikasiKtp();
+                    $statusKtp->pasien_id = Auth::user()->id;
+                    $statusKtp->status = "Menunggu Konfirmasi";
+    
+                    $statusKtp->save();
+                }
                 return ResponseFormatter::success([$file],'File successfully uploaded');
             }
         }catch(Exception $e)

@@ -112,7 +112,7 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="validationCustom04">Resep Obat</label>
-                                   <textarea name="resep_obat" class="form-control" placeholder="Alamat Pasien"></textarea>
+                                   <textarea name="resep_obat" class="form-control" placeholder="Resep Obat"></textarea>
                                 </div>
                             </div>
                         </div>
