@@ -8,6 +8,7 @@ use App\Models\ModelAntrian;
 use App\Models\ModelPemeriksaan;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PendaftaranPemeriksaanController extends Controller
 {
@@ -58,6 +59,33 @@ class PendaftaranPemeriksaanController extends Controller
             }
 
             return ResponseFormatter::success($no_antrian, 'Berhasil mengambil data No Antrian');
+
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error($e->getMessage(),'Something went wrong');
+        }
+    }
+
+    public function createPemeriksaan(Request $request)
+    {
+        try{
+
+            $id_pasien = Auth::user()->id;
+            $corrected_by = $id_pasien;
+
+            $model = new ModelPemeriksaan();
+            $model->no_urut = $request->no_urut;
+            $model->id_pasien = $id_pasien;
+            $model->umur = null;
+            $model->status = $request->status;
+            $model->corrected_by = $corrected_by;
+            $model->kunjungan = $request->kunjungan;
+            $model->id_poli = $request->id_poli;
+            $model->status_pemeriksaan = $request->status_pemeriksaan;
+            $model->save();
+
+
+            return ResponseFormatter::success($model, 'Berhasil input data');
 
         }catch(Exception $e)
         {

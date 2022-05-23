@@ -36,6 +36,7 @@ use Illuminate\Support\Facades\Route;
         // Route Pendaftaran Pemeriksaan
         Route::get('pendaftaran/cek-antrian-poli', [PendaftaranPemeriksaanController::class, 'getListPoli']);
         Route::get('pendaftaran/getNoAntrian', [PendaftaranPemeriksaanController::class, 'getNoAntrian']);
+        Route::post('pendaftaran/createPendaftaran', [PendaftaranPemeriksaanController::class, 'createPemeriksaan']);
 
 
     });
