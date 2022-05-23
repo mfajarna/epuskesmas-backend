@@ -42,4 +42,9 @@ class ModelPemeriksaan extends Model
         return $this->hasOne(ModelHasilPemeriksaan::class);
     }
 
+    public function statusAntrian()
+    {
+        return $this->hasOne(ModelStatusAntrian::class);
+    }
+
 }

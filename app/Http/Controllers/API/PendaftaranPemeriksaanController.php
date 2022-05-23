@@ -6,6 +6,7 @@ use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\ModelAntrian;
 use App\Models\ModelPemeriksaan;
+use App\Models\ModelStatusAntrian;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -85,8 +86,19 @@ class PendaftaranPemeriksaanController extends Controller
             $model->save();
 
 
-            return ResponseFormatter::success($model, 'Berhasil input data');
+            $modelStatus = new ModelStatusAntrian();
+            $modelStatus->id_pemeriksaan = $model->id;
+            $modelStatus->id_pasien = $id_pasien;
+            $modelStatus->no_urut = $request->no_urut;
+            $modelStatus->status = "MENUNGGU";
+            $modelStatus->save();
 
+            if($model && $modelStatus)
+            {
+                return ResponseFormatter::success($model, 'Berhasil input data');
+            }else{
+                return ResponseFormatter::error('Error','Something went wrong');
+            }
         }catch(Exception $e)
         {
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
