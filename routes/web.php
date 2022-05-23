@@ -7,6 +7,7 @@ use App\Http\Controllers\KiosController;
 use App\Http\Controllers\PemeriksaanDokterController;
 use App\Http\Controllers\PendaftaranPemeriksaanController;
 use App\Http\Controllers\Poli\PoliController;
+use App\Http\Controllers\RiwayatPasienController;
 use App\Http\Controllers\VerifikasiktpController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,5 +62,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
             Route::resource('pemeriksaandokter', PemeriksaanDokterController::class);
                 Route::get('pemeriksaandokter/pemeriksaan/{id_poli}/{nama_poli}', [PemeriksaanDokterController::class, 'pemeriksaan'])->name('pemeriksaandokter.pemeriksaan');
                 Route::get('datapemeriksaan/{id}', [PemeriksaanDokterController::class, 'dataPemeriksaan']);
+                
+
+            // Riwayat Pasien
+            Route::resource('riwayatpasien', RiwayatPasienController::class);
+                Route::get('getPasien', [RiwayatPasienController::class, 'getPasien'])->name('riwayatpasien.getpasien');
+                Route::get('get-riwayat-berobat', [RiwayatPasienController::class, 'getRiwayatBerobat'])->name('riwayatpasien.getriwayat');
         }
 );
