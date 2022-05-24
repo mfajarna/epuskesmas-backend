@@ -9,6 +9,7 @@ use App\Http\Controllers\PendaftaranPemeriksaanController;
 use App\Http\Controllers\Poli\PoliController;
 use App\Http\Controllers\RiwayatPasienController;
 use App\Http\Controllers\VerifikasiktpController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +29,9 @@ Route::get('/', function(){
 
 Route::resource('/cek-antrian', KiosController::class);
 
-
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});
 
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
