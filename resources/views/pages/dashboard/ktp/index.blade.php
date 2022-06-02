@@ -128,6 +128,7 @@
                     data: {id:id},
                     success: function(res)
                     {
+                        console.log('res detail ktp', res);
                         $("#img_ktp").attr("src", res[0].pasien.foto_ktp)
                         $("#no_ktp").text(res[0].pasien.no_ktp)
                     }
