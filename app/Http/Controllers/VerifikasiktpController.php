@@ -139,7 +139,7 @@ class VerifikasiktpController extends Controller
 
         $model = ModelStatusVerifikasiKtp::with('pasien')->where('id', $id)->get();
 
-        // adding
+        // adding asss
         return response()->json($model);
     }
 
