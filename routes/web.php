@@ -33,6 +33,8 @@ Route::get('/foo', function () {
     Artisan::call('storage:link');
 });
 
+Route::get('/sms', [VerifikasiktpController::class, 'sendNotificationSms']);
+
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
     function()

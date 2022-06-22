@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\ModelPasien;
 use App\Models\ModelStatusVerifikasiKtp;
+use Exception;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use Nexmo\Laravel\Facade\Nexmo;
 
 class VerifikasiktpController extends Controller
 {
@@ -144,10 +146,46 @@ class VerifikasiktpController extends Controller
     {
         $id = $request->id;
         
-        $model = ModelStatusVerifikasiKtp::where('pasien_id', $id)->update(["status" => 'Sudah Konfirmasi']);
-
-        return response()->json($model);
-        toast()->success('Berhasil update status KTP');
         
+        $model = ModelStatusVerifikasiKtp::where('pasien_id', $id)->update(["status" => 'Sudah Konfirmasi']);
+        $pasien = ModelPasien::findOrFail($id);
+
+        $no_handphone = $pasien->no_handphone;
+        $substr = substr($no_handphone, 1);
+
+        $phone = '+62'.$substr;
+     
+
+        if($model)
+        {
+            Nexmo::message()->send([
+                'to'        => $phone,
+                'from'      => 'Epuskesmas Apps',
+                'sender'    => 'Epuskesmas Apps',
+                'text'      => 'Epuskesmas Apps - Selamat KTP Anda telah diverifikasi'
+            ]);
+
+            return response()->json($model);
+            // return toast()->success('Berhasil update status KTP');
+        }
+
+        
+    }
+
+    public function sendNotificationSms()
+    {
+        try{
+            Nexmo::message()->send([
+                'to'        => '+6281388669869',
+                'from'      => 'Epuskesmas Apps',
+                'sender'    => 'Epuskesmas Apps',
+                'text'      => 'Test Message'
+            ]);
+    
+        echo "Text Send";
+        }catch(Exception $e)
+        {
+            echo $e->getMessage();
+        }
     }
 }
