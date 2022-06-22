@@ -137,7 +137,7 @@
                         var linkPhoto = link+sub;
 
                         console.log(linkPhoto)
-                        $("#img_ktp").attr("src", 'public/'+res[0].pasien.foto_ktp)
+                        $("#img_ktp").attr("src", linkPhoto)
                         $('#image').text(res[0].pasien.foto_ktp)
                         $("#no_ktp").text(res[0].pasien.no_ktp)
                     }
