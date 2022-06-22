@@ -129,6 +129,10 @@
                     success: function(res)
                     {
                         console.log('res detail ktp', res);
+                        var text = res[0].pasien.foto_ktp;
+                        var sub = text.substring(30);
+                        console.log(sub)
+
                         $("#img_ktp").attr("src", 'public/'+res[0].pasien.foto_ktp)
                         $('#image').text(res[0].pasien.foto_ktp)
                         $("#no_ktp").text(res[0].pasien.no_ktp)
