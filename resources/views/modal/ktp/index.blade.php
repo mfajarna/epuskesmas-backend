@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-12 mt-4">
                     <img src="" class="avatar avatar-xxl me-3 img-fluid"  id="img_ktp" class="rounded-image">
-                    <p id="image"></p>
+    
                 </div>
                 
                 <span class="mb-2 text-xs mt-2">
