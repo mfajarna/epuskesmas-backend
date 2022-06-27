@@ -8,6 +8,7 @@ use App\Http\Controllers\PemeriksaanDokterController;
 use App\Http\Controllers\PendaftaranPemeriksaanController;
 use App\Http\Controllers\Poli\PoliController;
 use App\Http\Controllers\RiwayatPasienController;
+use App\Http\Controllers\SuratrujukanController;
 use App\Http\Controllers\VerifikasiktpController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -73,5 +74,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
             Route::resource('riwayatpasien', RiwayatPasienController::class);
                 Route::get('getPasien', [RiwayatPasienController::class, 'getPasien'])->name('riwayatpasien.getpasien');
                 Route::get('get-riwayat-berobat', [RiwayatPasienController::class, 'getRiwayatBerobat'])->name('riwayatpasien.getriwayat');
+                Route::get('pdf-riwayat-pasien', [RiwayatPasienController::class, 'pdfRiwayatPasien'])->name('riwayat.pdf-pasien');
+
+            // Surat Rujukan
+            Route::resource('suratrujukan', SuratrujukanController::class);
+                Route::get('pdf-surat-rujukan', [SuratrujukanController::class, 'showPdfRujukan'])->name('showPdfRujukan');
         }
 );

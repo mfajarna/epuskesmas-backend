@@ -136,6 +136,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('admin.suratrujukan.index')}}" >
+                            <i data-feather="folder"></i>
+                            <span data-key="t-apps">Surat Rujukan</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.riwayatpasien.index')}}" >
                             <i data-feather="folder"></i>
                             <span data-key="t-apps">Riwayat Berobat Pasien</span>

@@ -15,7 +15,8 @@ class ModelHasilPemeriksaan extends Model
         'id_pasien',
         'is_rujukan',
         'rujukan',
-        'resep_obat'
+        'resep_obat',
+        'keluhan_pasien'
     ];
 
     public function pemeriksaan()

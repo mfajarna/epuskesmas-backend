@@ -33,6 +33,7 @@
                         <th class="text-center">Nama Pasien</th>
                         <th class="text-center">No KTP</th>
                         <th class="text-center">Aksi</th>
+                        <th class="text-center">Print PDF</th>
                 </thead>
             </table>
         </div>
@@ -90,9 +91,31 @@
                         data: 'button_detail',
                         name: 'button_detail',
                         orderable: false
+                    },
+                    {
+                        "targets": 5,
+                        "class": "text-center",
+                        data: 'pdf',
+                        name: 'pdf',
+                        orderable: false
                     }
 
                 ]
+            })
+
+            t.on('click', '#pdf', function(){
+                $tr = $(this).closest('tr');
+                if($($tr).hasClass('child')){
+                    $tr = $tr.prev('.parent')
+                }
+
+                var data = t.row($tr).data();
+                var id = data.id;
+
+
+                window.open('/admin/pdf-riwayat-pasien?id='+id+'', '_blank');
+
+
             })
 
 
@@ -107,6 +130,7 @@
 
                 var data = t.row($tr).data();
                 var id = data.id;
+                
 
                 $.ajax({
                     method: 'get',
@@ -160,9 +184,15 @@
                                                 data: "rujukan",
                                                 name: "rujukan",
                                         },
+                                        {
+                                                "targets": 3,
+                                                "class": "text-sm",
+                                                data: "keluhan_pasien",
+                                                name: "keluhan_pasien",
+                                        },
                                         
                                 ]
-                        })
+                    })
 
             })
 

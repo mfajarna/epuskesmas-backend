@@ -350,7 +350,9 @@ class PendaftaranPemeriksaanController extends Controller
         }
 
         $namaAntrian = implode(' ', $first_name). implode(' ', $second_name);
-        $find_code = ModelPemeriksaan::where('id_poli', $id_poli)->max('no_urut');
+        $find_code = ModelPemeriksaan::where('id_poli', $id_poli)->whereDate('created_at', $date)->max('no_urut');
+
+     
         
         if($find_code)
         {
