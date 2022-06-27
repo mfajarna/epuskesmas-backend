@@ -291,4 +291,24 @@ class PasienController extends Controller
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
         }
     }
+
+    public function getRiwayatObat(Request $request)
+    {
+        try{
+            $id = $request->id_pasien;
+            $model = ModelHasilPemeriksaan::where('id_pasien', $id)
+                    ->select('id','resep_obat')
+                    ->latest()->get();
+
+            if($model)
+            {
+                return ResponseFormatter::success($model,'Sukses mengambil data status verifikasi');
+            }else{
+                return ResponseFormatter::success([],'Oops data tidak ada');
+            }
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error($e->getMessage(),'Something went wrong');
+        }
+    }
 }

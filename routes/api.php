@@ -47,6 +47,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('antrianpasien/get-antrian', [AntrianPasienController::class,'getAntrianPasien']);
     
     Route::get('pasien/riwayatkesehatan', [PasienController::class,'getRiwayatKesehatan']);
+    Route::get('pasien/riwayat-obat', [PasienController::class, 'getRiwayatObat']);
 
     Route::get('pasien/fetch', [PasienController::class, 'pasien']);
   
