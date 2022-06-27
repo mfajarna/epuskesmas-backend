@@ -7,6 +7,7 @@ use App\Actions\Fortify\PasswordValidationRules;
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Antrian\AntrianController;
 use App\Models\DetailPasienModel;
+use App\Models\ModelHasilPemeriksaan;
 use App\Models\ModelPasien;
 use App\Models\ModelStatusVerifikasiKtp;
 use App\Models\User;
@@ -265,6 +266,26 @@ class PasienController extends Controller
             
             return ResponseFormatter::success($model,'Sukses mengambil data status verifikasi');
                 
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error($e->getMessage(),'Something went wrong');
+        }
+    }
+
+    public function getRiwayatKesehatan(Request $request)
+    {
+        try{
+            $id = $request->id_pasien;
+            $model = ModelHasilPemeriksaan::where('id_pasien', $id)->latest()->get();
+
+            if($model)
+            {
+                return ResponseFormatter::success($model,'Sukses mengambil data status verifikasi');
+            }else{
+                return ResponseFormatter::success([],'Oops data tidak ada');
+            }
+
+
         }catch(Exception $e)
         {
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
