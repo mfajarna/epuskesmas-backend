@@ -18,6 +18,7 @@ class RiwayatPasienController extends Controller
     {
         $model = ModelPasien::with('hasilPemeriksaan')->latest()->get();
 
+
         if(request()->ajax())
         {
             return DataTables::of($model)
@@ -28,7 +29,13 @@ class RiwayatPasienController extends Controller
 
                 return $button_status;
             })
-            ->rawColumns(['button_detail'])
+            ->addColumn('pdf', function($tipe){
+                $button_status = '<button type="button" name="detail" id="pdf" class="btn btn-success btn-rounded waves-effect waves-light w-lg">Print PDF</button>';
+                
+
+                return $button_status;
+            })
+            ->rawColumns(['button_detail','pdf'])
             ->make(true);
         }
 
@@ -131,4 +138,23 @@ class RiwayatPasienController extends Controller
                     ->make(true);
         }
     } 
+
+
+    public function pdfRiwayatPasien(Request $request)
+    {
+        $id = $request->id;
+        $model = ModelPasien::where('id', $id)->first();
+        $modelHasilPemeriksaan = ModelHasilPemeriksaan::where('id_pasien', $id)->latest()->get();
+
+        $nama_lengkap   = $model->nama_lengkap;
+        $no_ktp         = $model->no_ktp;
+        $jenis_kelamin  = $model->jenis_kelamin;
+        $no_handphone   = $model->no_handphone;
+        $email         = $model->email;
+        $alamat         = $model->alamat;
+        $kode_pasien    = $model->kode_pasien;
+
+
+        return view('pdf.pdf-hasil-pemeriksaan', compact('nama_lengkap','no_ktp','jenis_kelamin','no_handphone','email','alamat','kode_pasien', 'modelHasilPemeriksaan'));
+    }
 }

@@ -81,6 +81,7 @@
                                                     <th class="text-center">Tgl</th>
                                                     <th class="text-center">Riwayat Obat</th>
                                                     <th class="text-center">Rujukan</th>
+                                                    <th class="text-center">Keluhan Pasien</th>
                                                 </tr>
                                             </thead>
                     

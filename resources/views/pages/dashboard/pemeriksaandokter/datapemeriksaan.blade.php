@@ -106,15 +106,30 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="row">
+  
+
                             <div class="col-md-4">
-                                <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Butuh Rujukan</a>
-                            </div> 
+                                <div class="mb-3">
+                                    <label class="form-label" for="validationCustom04">Keluhan Pasien</label>
+                                   <textarea name="keluhan_pasien" class="form-control" placeholder="Resep Obat"></textarea>
+                                </div>
+                            </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="validationCustom04">Resep Obat</label>
                                    <textarea name="resep_obat" class="form-control" placeholder="Resep Obat"></textarea>
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <input class="form-check-input" name="rujukan_check" type="checkbox" id="autoSizingCheck2">
+                                    <label class="form-check-label" for="autoSizingCheck2">
+                                        Butuh Rujukan
+                                    </label>
+                                </div>
+                            </div>
+  
+
                         </div>
                         
                         <div class="row">

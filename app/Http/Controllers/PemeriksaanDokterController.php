@@ -46,39 +46,62 @@ class PemeriksaanDokterController extends Controller
         $validation = $request->validate([
             'id_pemeriksaan'    => 'required',
             'id_pasien'         => 'required',
+            'keluhan_pasien'    => 'string',
         ]);
 
-        $rujukan = $request->rujukan;
+        if($request->has('rujukan_check')){
+            
+            $rujukan = "Pasien memerlukan rujukan";
 
-        $model = new ModelHasilPemeriksaan();
-        $model->id_pemeriksaan = $validation['id_pemeriksaan'];
-        $model->id_pasien = $validation['id_pasien'];
-        if($rujukan == "")
-        {
-            $model->is_rujukan = 0;
-            $model->rujukan = "";
-        }
-        if($rujukan != "")
-        {
-            $model->is_rujukan = 1;
+            $model = new ModelHasilPemeriksaan();
+            $model->id_pemeriksaan = $validation['id_pemeriksaan'];
+            $model->id_pasien = $validation['id_pasien'];
+            $model->keluhan_pasien = $validation['keluhan_pasien'];
             $model->rujukan =$rujukan;
-        }
-        $model->resep_obat = $request->resep_obat;
-        $model->save();
+            $model->is_rujukan = 1;
+            $model->resep_obat = $request->resep_obat;
+            $model->save();
 
-        $pemeriksaan = ModelPemeriksaan::findOrFail($validation['id_pemeriksaan']);
-        $pemeriksaan->status_pemeriksaan = "SELESAI";
-        $pemeriksaan->save();
+            $pemeriksaan = ModelPemeriksaan::findOrFail($validation['id_pemeriksaan']);
+            $pemeriksaan->status_pemeriksaan = "SELESAI";
+            $pemeriksaan->save();
 
-        if($model && $pemeriksaan)
-        {
-            toast()->success('Berhasil membuat hasil pemeriksaan pasien');
-        
-            return redirect()->route('admin.pemeriksaandokter.index');
+            if($model && $pemeriksaan)
+            {
+                toast()->success('Berhasil membuat hasil pemeriksaan pasien');
+            
+                return redirect()->route('admin.pemeriksaandokter.index');
+            }else{
+                toast()->error('Gagal membuat hasil pemeriksaan pasien');
+            
+                return redirect()->route('admin.pemeriksaandokter.index');
+            }
         }else{
-            toast()->error('Gagal membuat hasil pemeriksaan pasien');
-        
-            return redirect()->route('admin.pemeriksaandokter.index');
+            $rujukan = "Tidak memerlukan rujuan";
+
+            $model = new ModelHasilPemeriksaan();
+            $model->id_pemeriksaan = $validation['id_pemeriksaan'];
+            $model->id_pasien = $validation['id_pasien'];
+            $model->keluhan_pasien = $validation['keluhan_pasien'];
+            $model->rujukan =$rujukan;
+            $model->is_rujukan = 0;
+            $model->resep_obat = $request->resep_obat;
+            $model->save();
+
+            $pemeriksaan = ModelPemeriksaan::findOrFail($validation['id_pemeriksaan']);
+            $pemeriksaan->status_pemeriksaan = "SELESAI";
+            $pemeriksaan->save();
+
+            if($model && $pemeriksaan)
+            {
+                toast()->success('Berhasil membuat hasil pemeriksaan pasien');
+            
+                return redirect()->route('admin.pemeriksaandokter.index');
+            }else{
+                toast()->error('Gagal membuat hasil pemeriksaan pasien');
+            
+                return redirect()->route('admin.pemeriksaandokter.index');
+            }
         }
     }
 
