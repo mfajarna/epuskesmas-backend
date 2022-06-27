@@ -39,11 +39,12 @@ use Illuminate\Support\Facades\Route;
         Route::get('pendaftaran/getNoAntrian', [PendaftaranPemeriksaanController::class, 'getNoAntrian']);
         Route::post('pendaftaran/createPendaftaran', [PendaftaranPemeriksaanController::class, 'createPemeriksaan']);
 
-        // Route Status Antrian Pasien
-        Route::get('antrianpasien/get-antrian', [AntrianPasienController::class,'getAntrianPasien']);
+ 
 
     });
 
+    // Route Status Antrian Pasien
+    Route::get('antrianpasien/get-antrian', [AntrianPasienController::class,'getAntrianPasien']);
 
     Route::get('pasien/fetch', [PasienController::class, 'pasien']);
   

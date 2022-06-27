@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
+use App\Models\ModelPemeriksaan;
 use App\Models\ModelStatusAntrian;
 use Exception;
 use Illuminate\Http\Request;
@@ -14,13 +15,13 @@ class AntrianPasienController extends Controller
     {
         try{
             $id_pasien = $request->id_pasien;
-            $model = ModelStatusAntrian::where('id_pasien', $id_pasien)->first();
+            $model = ModelPemeriksaan::where('id_pasien', $id_pasien)->where('status_pemeriksaan', 'MENUNGGU')->first();
 
             if($model)
             {
-                return ResponseFormatter::success($model, 'Berhasil generate kode pasien');
+                return ResponseFormatter::success($model, 'Berhasil ambil data');
             }else{
-                return ResponseFormatter::error("Oops", 'Oops data tidak ada');
+                return ResponseFormatter::success([], 'Oops data tidak ada');
             }
 
         }catch(Exception $e)
