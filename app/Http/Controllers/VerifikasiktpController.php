@@ -26,7 +26,11 @@ class VerifikasiktpController extends Controller
             return DataTables::of($model)
             ->addColumn('status_button', function($tipe)
             {
-                
+                if($tipe->status == "Belum Upload KTP")
+                {
+                    $button = '<button type="button" name="status_ktp" id="status_ktp" class="btn btn-info waves-effect waves-light" disabled>';
+                    $button .=  '<i class="bx bx-info-circle font-size-16 align-middle me-2"></i>Belum Upload KTP</button>';
+                }
                 if($tipe->status == "Menunggu Konfirmasi")
                 {
                     $button = '<button type="button" name="status_ktp" id="status_ktp" class="btn btn-warning waves-effect waves-light">';

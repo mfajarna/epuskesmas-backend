@@ -129,7 +129,7 @@ class PendaftaranPemeriksaanController extends Controller
                 {
                     $modelVerifikasi = new ModelStatusVerifikasiKtp();
                     $modelVerifikasi->pasien_id = $pasien->id;
-                    $modelVerifikasi->status ="";
+                    $modelVerifikasi->status ="Belum Upload KTP";
                     $modelVerifikasi->save();
                 }
     
@@ -236,7 +236,7 @@ class PendaftaranPemeriksaanController extends Controller
                 {
                     $modelVerifikasi = new ModelStatusVerifikasiKtp();
                     $modelVerifikasi->pasien_id = $pasien->id;
-                    $modelVerifikasi->status ="";
+                    $modelVerifikasi->status ="Belum Upload KTP";
                     $modelVerifikasi->save();
                 }
                     
