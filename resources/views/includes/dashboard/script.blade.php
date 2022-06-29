@@ -1,21 +1,21 @@
       <!-- JAVASCRIPT -->
-      <script src="{{ asset('/assets/libs/jquery/jquery.min.js')}}"></script>
-      <script src="{{ asset('/assets/libs/bootstrap/js/bootstrap.bundle.min.j')}}s"></script>
-      <script src="{{ asset('/assets/libs/metismenu/metisMenu.min.js')}}"></script>
-      <script src="{{ asset('/assets/libs/simplebar/simplebar.min.js')}}"></script>
-      <script src="{{ asset('/assets/libs/node-waves/waves.min.j')}}s"></script>
-      <script src="{{ asset('/assets/libs/feather-icons/feather.min.js')}}"></script>
+      <script src="{{ url('/public//assets/libs/jquery/jquery.min.js')}}"></script>
+      <script src="{{ url('/public//assets/libs/bootstrap/js/bootstrap.bundle.min.j')}}s"></script>
+      <script src="{{ url('/public//assets/libs/metismenu/metisMenu.min.js')}}"></script>
+      <script src="{{ url('/public//assets/libs/simplebar/simplebar.min.js')}}"></script>
+      <script src="{{ url('/public//assets/libs/node-waves/waves.min.j')}}s"></script>
+      <script src="{{ url('/public//assets/libs/feather-icons/feather.min.js')}}"></script>
       <!-- pace js -->
-      <script src="{{ asset('/assets/libs/pace-js/pace.min.js')}}"></script>
+      <script src="{{ url('/public//assets/libs/pace-js/pace.min.js')}}"></script>
 
       <!-- apexcharts -->
-      <script src="{{ asset('/assets/libs/apexcharts/apexcharts.min.j')}}s"></script>
+      <script src="{{ url('/public//assets/libs/apexcharts/apexcharts.min.j')}}s"></script>
 
       <!-- Plugins js-->
-      <script src="{{ asset('/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-      <script src="{{ asset('/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js')}}"></script>
+      <script src="{{ url('/public//assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+      <script src="{{ url('/public//assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js')}}"></script>
       <!-- dashboard init -->
-      <script src="{{ asset('/assets/js/pages/dashboard.init.js')}}"></script>
+      <script src="{{ url('/public//assets/js/pages/dashboard.init.js')}}"></script>
 
       <!-- Required datatable js -->
       <script src="{{ url('/public/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
