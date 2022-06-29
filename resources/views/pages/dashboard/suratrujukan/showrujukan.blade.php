@@ -96,7 +96,7 @@
                 var path_pdf = data.path_file_pdf;
 
                 
-                window.open('/uploads/'+path_pdf)
+                window.open('/public/uploads/'+path_pdf)
 
             })
         })
