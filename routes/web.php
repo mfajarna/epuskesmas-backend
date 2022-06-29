@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\KiosController;
 use App\Http\Controllers\PemeriksaanDokterController;
+use App\Http\Controllers\PemeriksaanLaboratoriumController;
 use App\Http\Controllers\PendaftaranPemeriksaanController;
 use App\Http\Controllers\Poli\PoliController;
 use App\Http\Controllers\RiwayatPasienController;
@@ -79,5 +80,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
             // Surat Rujukan
             Route::resource('suratrujukan', SuratrujukanController::class);
                 Route::get('pdf-surat-rujukan', [SuratrujukanController::class, 'showPdfRujukan'])->name('showPdfRujukan');
+                Route::get('show-rujukan', [SuratrujukanController::class, 'showSuratRujukan'])->name('suratrujukan.showRujukan');
+                Route::get('download-pdf/{files}', [SuratrujukanController::class,'downloadPDF'])->name('suratrujukan.download');
+
+            // Pemeriksaan Lab
+            Route::resource('pemeriksaanlab', PemeriksaanLaboratoriumController::class);
+                Route::get('/form-pemeriksaan-lab', [PemeriksaanLaboratoriumController::class,'printFormulirPemeriksaanLab']);
         }
 );

@@ -142,6 +142,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('admin.pemeriksaanlab.index')}}" >
+                            <i data-feather="folder"></i>
+                            <span data-key="t-apps">Pemeriksaan Lab</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.riwayatpasien.index')}}" >
                             <i data-feather="folder"></i>
                             <span data-key="t-apps">Riwayat Berobat Pasien</span>
