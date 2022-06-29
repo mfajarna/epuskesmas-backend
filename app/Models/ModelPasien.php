@@ -103,4 +103,14 @@ class ModelPasien extends Authenticatable
         return $this->hasOne(ModelStatusAntrian::class, 'id');
     }
 
+    public function pemeriksaanlab()
+    {
+        return $this->hasMany(ModelPemeriksaanlab::class, 'id');
+    }
+    
+    public function suratRujukan()
+    {
+        return $this->hasMany(ModelSuratRujukan::class, 'id');
+    }
+
 }
