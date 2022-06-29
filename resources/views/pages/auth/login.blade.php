@@ -10,7 +10,7 @@
                 <div class="d-flex flex-column h-100">
                     <div class="mb-4 mb-md-5 text-center">
                         <a href="index.html" class="d-block auth-logo">
-                            <img src="{{ asset('/assets/images/logo-sm.svg')}}" alt="" height="28"> <span class="logo-txt">E-Puskesmas</span>
+                            <img src="{{ asset('/public/assets/images/logo-sm.svg')}}" alt="" height="28"> <span class="logo-txt">E-Puskesmas</span>
                         </a>
                     </div>
                     <div class="auth-content my-auto">
@@ -110,7 +110,7 @@
                                         <div class="mt-4 pt-3 pb-5">
                                             <div class="d-flex align-items-start">
                                                 <div class="flex-shrink-0">
-                                                    <img src="{{ asset('/assets/images/users/avatar-1.jpg')}}" class="avatar-md img-fluid rounded-circle" alt="...">
+                                                    <img src="{{ asset('/public/assets/images/users/avatar-1.jpg')}}" class="avatar-md img-fluid rounded-circle" alt="...">
                                                 </div>
                                                 <div class="flex-grow-1 ms-3 mb-4">
                                                     <h5 class="font-size-18 text-white">Richard Drews
@@ -135,7 +135,7 @@
                                         <div class="mt-4 pt-3 pb-5">
                                             <div class="d-flex align-items-start">
                                                 <div class="flex-shrink-0">
-                                                    <img src="{{ asset('/assets/images/users/avatar-2.jpg')}}" class="avatar-md img-fluid rounded-circle" alt="...">
+                                                    <img src="{{ asset('/public/assets/images/users/avatar-2.jpg')}}" class="avatar-md img-fluid rounded-circle" alt="...">
                                                 </div>
                                                 <div class="flex-grow-1 ms-3 mb-4">
                                                     <h5 class="font-size-18 text-white">Rosanna French
