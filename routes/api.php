@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AntrianPasienController;
 use App\Http\Controllers\API\PasienController;
 use App\Http\Controllers\API\PendaftaranPemeriksaanController;
+use App\Http\Controllers\API\SuratrujukanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,8 @@ use Illuminate\Support\Facades\Route;
  
 
     });
+
+    Route::get('suratrujukan/getSuratRujukan', [SuratrujukanController::class,'getSuratRujukan']);
 
     // Route Status Antrian Pasien
     Route::get('antrianpasien/get-antrian', [AntrianPasienController::class,'getAntrianPasien']);
