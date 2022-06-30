@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\ModelHasilPemeriksaan;
+use App\Models\ModelPemeriksaan;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -69,7 +70,7 @@ class DokterController extends Controller
 
             if($model)
             {
-                return ResponseFormatter::success($model,'Sukses mengambil data status verifikasi');
+                return ResponseFormatter::success($model,'Sukses mengambil data');
             }else{
                 return ResponseFormatter::success([],'Oops data tidak ada');
             }
@@ -92,13 +93,31 @@ class DokterController extends Controller
 
             if($model)
             {
-                return ResponseFormatter::success($model,'Sukses mengambil data status verifikasi');
+                return ResponseFormatter::success($model,'Sukses mengambil data');
             }else{
                 return ResponseFormatter::success([],'Oops data tidak ada');
             }
         }catch(Exception $e)
         {
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
+        }
+    }
+
+    public function getPemeriksaan(Request $request)
+    {
+        try{
+            $model = ModelPemeriksaan::with('pasien')->where('status_pemeriksaan', 'MENUNGGU')->get();
+
+            if($model)
+            {
+                return ResponseFormatter::success($model,'Sukses mengambil data');
+            }else{
+                return ResponseFormatter::success([],'Oops data tidak ada');
+            }
+            
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error($e->getMessage(),'Something went wrong'); 
         }
     }
 }
