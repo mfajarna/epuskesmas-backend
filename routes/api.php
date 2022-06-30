@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AntrianPasienController;
+use App\Http\Controllers\API\DokterController;
 use App\Http\Controllers\API\PasienController;
 use App\Http\Controllers\API\PendaftaranPemeriksaanController;
 use App\Http\Controllers\API\SuratrujukanController;
@@ -26,6 +27,10 @@ use Illuminate\Support\Facades\Route;
 
     // Login Pasien
     Route::post('pasien/login', [PasienController::class,'login']);
+
+    // Login Dokter
+    Route::post('dokter/login', [DokterController::class, 'login']);
+    Route::get('dokter/riwayatkesehatanpasien', [DokterController::class, 'riwayatKesehatanPasien']);
 
     Route::middleware('auth:sanctum')->group(function(){
 
