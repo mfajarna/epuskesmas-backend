@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\ModelHasilPemeriksaan;
+use App\Models\ModelPasien;
 use App\Models\ModelPemeriksaan;
 use App\Models\User;
 use Exception;
@@ -61,11 +62,11 @@ class DokterController extends Controller
         try{
             $id = $request->id_pasien;
             
-            $model = ModelHasilPemeriksaan::orderBy('id_pasien','asc')->get();
+            $model = ModelPasien::all();
 
             if($id)
             {
-                $model = ModelHasilPemeriksaan::where('id_pasien', $id)->latest()->get();
+                $model = ModelHasilPemeriksaan::where('id_pasien', $id)->get();
             }
 
             if($model)
@@ -77,7 +78,7 @@ class DokterController extends Controller
 
         }catch(Exception $e)
         {
-            return ResponseFormatter::error($e->getMessage(),'Gagal Mengambil Kode Pasien');
+            return ResponseFormatter::error($e->getMessage(),'Something went wrong');
         }
     }
 
@@ -114,10 +115,11 @@ class DokterController extends Controller
             }else{
                 return ResponseFormatter::success([],'Oops data tidak ada');
             }
-            
+
         }catch(Exception $e)
         {
             return ResponseFormatter::error($e->getMessage(),'Something went wrong'); 
         }
     }
+
 }
