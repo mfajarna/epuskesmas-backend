@@ -86,10 +86,15 @@ class DokterController extends Controller
     {
         try{
             $id = $request->id_pasien;
-            $model = ModelHasilPemeriksaan::where('id_pasien', $id)
-                    ->select('id','resep_obat')
-                    ->latest()->get();
 
+            $model = ModelPasien::all();
+
+            if($id)
+            {
+                $model = ModelHasilPemeriksaan::where('id_pasien', $id)
+                ->select('id','resep_obat')
+                ->latest()->get();
+            }
             
 
             if($model)
@@ -121,5 +126,6 @@ class DokterController extends Controller
             return ResponseFormatter::error($e->getMessage(),'Something went wrong'); 
         }
     }
+
 
 }
