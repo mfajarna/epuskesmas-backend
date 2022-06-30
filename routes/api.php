@@ -5,6 +5,7 @@ use App\Http\Controllers\API\DokterController;
 use App\Http\Controllers\API\PasienController;
 use App\Http\Controllers\API\PendaftaranPemeriksaanController;
 use App\Http\Controllers\API\SuratrujukanController;
+use App\Models\Pasien_m;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -60,4 +61,5 @@ use Illuminate\Support\Facades\Route;
     Route::get('pasien/riwayat-obat', [PasienController::class, 'getRiwayatObat']);
 
     Route::get('pasien/fetch', [PasienController::class, 'pasien']);
+    Route::post('pasien/changePassword', [PasienController::class,'changePassword']);
   

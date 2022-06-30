@@ -311,4 +311,28 @@ class PasienController extends Controller
             return ResponseFormatter::error($e->getMessage(),'Something went wrong');
         }
     }
+
+    public function changePassword(Request $request)
+    {
+        try{
+
+            $id = $request->id_pasien;
+            $password = $request->password;
+
+            $model = ModelPasien::findOrFail($id);
+            $model->password = Hash::make($password);
+            $model->update();
+
+            if($model)
+            {
+                return ResponseFormatter::success($model,'Sukses');
+            }else{
+                return ResponseFormatter::success([],'Oops data tidak ada');
+            }
+
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error($e->getMessage(),'Something went wrong'); 
+        }
+    }
 }
