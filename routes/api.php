@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\Route;
     Route::post('dokter/login', [DokterController::class, 'login']);
     Route::get('dokter/riwayatkesehatanpasien', [DokterController::class, 'riwayatKesehatanPasien']);
     Route::get('dokter/getPemeriksaan', [DokterController::class, 'getPemeriksaan']);
+    Route::get('dokter/riwayatobatpasien', [DokterController::class, 'riwayatObatPasien']);
 
     Route::middleware('auth:sanctum')->group(function(){
 
