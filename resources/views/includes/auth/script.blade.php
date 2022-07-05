@@ -4,6 +4,7 @@
         <script src="{{ url('/public/assets/libs/metismenu/metisMenu.min.js')}}"></script>
         <script src="{{ url('/public/assets/libs/simplebar/simplebar.min.js')}}"></script>
         <script src="{{ url('/public/assets/libs/node-waves/waves.min.js')}}"></script>
+        // asset
         <script src="{{ url('/public/assets/libs/feather-icons/feather.min.js')}}"></script>
         <!-- pace js -->
         <script src="{{ url('/public/assets/libs/pace-js/pace.min.j')}}s"></script>
