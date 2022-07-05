@@ -5,11 +5,11 @@
 @push('after-style')
 
         <!-- DataTables -->
-        <link href="{{ url('/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ url('/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('/public/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('/public/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 
         <!-- Responsive datatable examples -->
-        <link href="{{ url('/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('/public/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 
 @endpush
 
@@ -129,7 +129,15 @@
                     success: function(res)
                     {
                         console.log('res detail ktp', res);
-                        $("#img_ktp").attr("src", res[0].pasien.foto_ktp)
+                        var text = res[0].pasien.foto_ktp;
+                        var sub = text.substring(30);
+                        
+
+                        var link = 'https://puskeslinggarjati.com/public/';
+                        var linkPhoto = link+sub;
+
+                        console.log(linkPhoto)
+                        $("#img_ktp").attr("src", linkPhoto)
                         $("#no_ktp").text(res[0].pasien.no_ktp)
                     }
                 })
