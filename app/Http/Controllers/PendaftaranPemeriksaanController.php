@@ -19,16 +19,16 @@ class PendaftaranPemeriksaanController extends Controller
 
     protected $auth, $database;
 
-    public function __construct()
-    {
-        $factory = (new Factory)
-                ->withServiceAccount(__DIR__.'/epuskesmas-b4a89-da9b726e9991.json')
-                ->withDatabaseUri(env('FIREBASE_DATABASE_URL'));
+    // public function __construct()
+    // {
+    //     $factory = (new Factory)
+    //             ->withServiceAccount(__DIR__.'/epuskesmas-b4a89-da9b726e9991.json')
+    //             ->withDatabaseUri(env('FIREBASE_DATABASE_URL'));
 
-        $this->auth = $factory->createAuth();
-        $this->database = $factory->createDatabase();
+    //     $this->auth = $factory->createAuth();
+    //     $this->database = $factory->createDatabase();
 
-    }
+    // }
 
     /**
      * Display a listing of the resource.
