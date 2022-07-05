@@ -60,7 +60,7 @@
                         @endforeach
 
                         @endif
-                        <form method="POST" action={{ route('admin.pendaftaranpemeriksaan.store') }}>
+                        <form method="POST" action="/admin/action-post">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
@@ -209,7 +209,7 @@
                         </form>
                     </div>
                     <div class="tab-pane" id="profile1" role="tabpanel">
-                        <form method="POST" action={{ route('admin.pendaftaranpemeriksaan.store') }}>
+                        <form method="POST" action="/admin/action-post">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
