@@ -70,7 +70,7 @@
                     </li>
                     <li class="menu-title" data-key="t-menu">Administrasi</li>
                     <li>
-                        <a href="{{ url('/admin/pendaftaranpemeriksaan')}}" >
+                        <a href="{{ url('/admin/pendaftaranpemeriksaanpasien')}}" >
                             <i data-feather="folder"></i>
                             <span data-key="t-apps">Pendaftaran Pemeriksaan</span>
                         </a>
