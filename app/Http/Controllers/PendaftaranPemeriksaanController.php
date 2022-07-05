@@ -287,11 +287,11 @@ class PendaftaranPemeriksaanController extends Controller
 
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru Umum');
         
-                    return redirect()->route('admin.pendaftaran-pemeriksaan.index');
+                    return redirect()->url('/admin/pendaftaranpemeriksaan');
                 }else{
                     toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Baru Umum');
         
-                    return redirect()->route('admin.pendaftaran-pemeriksaan.index');
+                    return redirect()->url('/admin/pendaftaranpemeriksaan');
                 }
             }
 
