@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="btn-group" role="group">
-                            <a href="{{ url('admin/pendaftaranpemeriksaanpasien/pendaftaran/'. $data->id . '/'. $data->poli->nama_poli) }}"class="btn btn-outline-primary text-truncate"><i class="uil uil-user me-1"></i>Pilih Poli</a>
+                            <a href="{{ url('admin/pendaftaranpemeriksaanpasien/'. $data->id . '/'. $data->poli->nama_poli) }}"class="btn btn-outline-primary text-truncate"><i class="uil uil-user me-1"></i>Pilih Poli</a>
                         </div>
                     </div>
                     <!-- end card -->
