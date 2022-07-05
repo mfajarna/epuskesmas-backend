@@ -62,4 +62,5 @@ use Illuminate\Support\Facades\Route;
 
     Route::get('pasien/fetch', [PasienController::class, 'pasien']);
     Route::post('pasien/changePassword', [PasienController::class,'changePassword']);
+    Route::post('pasien/changePasswordDokter', [PasienController::class,'changePasswordDokter']);
   
