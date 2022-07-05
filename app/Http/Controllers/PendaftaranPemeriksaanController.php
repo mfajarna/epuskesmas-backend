@@ -155,17 +155,17 @@ class PendaftaranPemeriksaanController extends Controller
                 if($user && $pasien && $pemeriksaan && $modelVerifikasi)
                 {
                     $creds = [
-                        'email' => "yessicajuliane@puskesmas.com",
-                        'password' => "Dokter@123",
+                        'email' => $validate['email'],
+                        'password' => "Pasien@123",
                     ];
         
                     $createAuth = $this->auth->createUser($creds);
                     $uid = $createAuth->uid;
         
                     $userProperties = [
-                        'email' => "yessicajuliane@puskesmas.com",
-                        'password' => "Dokter@123",
-                        'displayName' => "yesiccajuliane",
+                        'email' => $validate['email'],
+                        'password' => "Pasien@123",
+                        'displayName' => $validate['nama_pasien'],
                         'uid'   => $uid
                     ];
         
@@ -175,11 +175,11 @@ class PendaftaranPemeriksaanController extends Controller
 
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru');
         
-                    return redirect()->route('admin.pendaftaran-pemeriksaan.index');
+                    return redirect()->url('admin/pendaftaranpemeriksaan/');
                 }else{
                     toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Baru');
         
-                    return redirect()->route('admin.pendaftaran-pemeriksaan.index');
+                    return redirect()->url('admin/pendaftaranpemeriksaan/');
                 }
             }
     
@@ -204,11 +204,11 @@ class PendaftaranPemeriksaanController extends Controller
                 {
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Lama');
         
-                    return redirect()->route('admin.pendaftaran-pemeriksaan.index');
+                    return redirect()->url('admin/pendaftaranpemeriksaan/');
                 }else{
                     toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Lama');
         
-                    return redirect()->route('admin.pendaftaran-pemeriksaan.index');
+                    return redirect()->url('admin/pendaftaranpemeriksaan/');
                 }
             }
         }
@@ -283,17 +283,17 @@ class PendaftaranPemeriksaanController extends Controller
                 {
 
                     $creds = [
-                        'email' => "yessicajuliane@puskesmas.com",
-                        'password' => "Dokter@123",
+                        'email' => $validate['email'],
+                        'password' => "Pasien@123",
                     ];
         
                     $createAuth = $this->auth->createUser($creds);
                     $uid = $createAuth->uid;
         
                     $userProperties = [
-                        'email' => "yessicajuliane@puskesmas.com",
-                        'password' => "Dokter@123",
-                        'displayName' => "yesiccajuliane",
+                        'email' => $validate['email'],
+                        'password' => "Pasien@123",
+                        'displayName' => $validate['nama_pasien'],
                         'uid'   => $uid
                     ];
         
@@ -331,11 +331,11 @@ class PendaftaranPemeriksaanController extends Controller
                 {
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Lama Umum');
         
-                    return redirect()->route('admin.pendaftaran-pemeriksaan.index');
+                    return redirect()->url('/admin/pendaftaranpemeriksaan');
                 }else{
                     toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Lama Umum');
         
-                    return redirect()->route('admin.pendaftaran-pemeriksaan.index');
+                    return redirect()->url('/admin/pendaftaranpemeriksaan');
                 }
             }
         }
