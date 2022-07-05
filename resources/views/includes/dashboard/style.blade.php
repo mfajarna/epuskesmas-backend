@@ -1,4 +1,4 @@
-<link rel="shortcut icon" href="{{ url('/public/assets/images/favicon.ico')}}">
+<link rel="shortcut icon" href="{{ url('assets/images/favicon.ico')}}">
 
 <!-- plugin css -->
 <link href="{{ url('/public/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
