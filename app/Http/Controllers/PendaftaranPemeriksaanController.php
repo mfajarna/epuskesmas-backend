@@ -434,4 +434,20 @@ class PendaftaranPemeriksaanController extends Controller
   
         return response()->json($response);
     }
+
+    public function regisDokterFbase()
+    {
+        
+            $userProperties = [
+                'email' => "yessicajuliane@puskesmas.com",
+                'password' => "Dokter@123",
+                'displayName' => "yesiccajuliane",
+            ];
+
+            $createAuth = $this->auth->createUser($userProperties);
+            $uid = $createAuth->uid;
+            $this->database->getReference('/dokter/'.$uid.'/')->set($userProperties);    
+
+            return response()->json('Sukses');
+    }
 }

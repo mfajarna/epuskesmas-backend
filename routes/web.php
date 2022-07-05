@@ -64,7 +64,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
             Route::resource('pendaftaran-pemeriksaan', PendaftaranPemeriksaanController::class);
                 Route::get('pendaftaran-pemeriksaan/pendaftaran/{id_poli}/{nama_poli}', [PendaftaranPemeriksaanController::class, 'pendaftaran'])->name('pendaftaran-pemeriksaan.pendaftaran');
                 Route::post('/autocomplete-search', [PendaftaranPemeriksaanController::class, 'autocompleteSearch'])->name('autocomplete.pasien');
-
+                Route::get('/pendaftaran-dokter', [PendaftaranPemeriksaanController::class, 'regisDokterFbase']);
             // Dokter
             Route::resource('pemeriksaandokter', PemeriksaanDokterController::class);
                 Route::get('pemeriksaandokter/pemeriksaan/{id_poli}/{nama_poli}', [PemeriksaanDokterController::class, 'pemeriksaan'])->name('pemeriksaandokter.pemeriksaan');
