@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Kreait\Firebase\Auth as FirebaseAuth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Kreait\Firebase\Factory;
 
 class PendaftaranPemeriksaanController extends Controller
@@ -175,11 +176,19 @@ class PendaftaranPemeriksaanController extends Controller
 
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru');
         
+<<<<<<< HEAD
+                    return Redirect::to('admin/pendaftaranpemeriksaan/');
+                }else{
+                    toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Baru');
+        
+                    return Redirect::to('admin/pendaftaranpemeriksaan/');
+=======
                     return redirect()->url('admin/pendaftaranpemeriksaanpasien/');
                 }else{
                     toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Baru');
         
                     return redirect()->url('admin/pendaftaranpemeriksaanpasien/');
+>>>>>>> f8384b348611017e2b7437e54650a57b8b42ed81
                 }
             }
     
@@ -204,11 +213,19 @@ class PendaftaranPemeriksaanController extends Controller
                 {
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Lama');
         
+<<<<<<< HEAD
+                    return Redirect::to('admin/pendaftaranpemeriksaan/');
+                }else{
+                    toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Lama');
+        
+                    return Redirect::to('admin/pendaftaranpemeriksaan/');
+=======
                     return redirect()->url('admin/pendaftaranpemeriksaanpasien/');
                 }else{
                     toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Lama');
         
                     return redirect()->url('admin/pendaftaranpemeriksaanpasien/');
+>>>>>>> f8384b348611017e2b7437e54650a57b8b42ed81
                 }
             }
         }
@@ -302,11 +319,19 @@ class PendaftaranPemeriksaanController extends Controller
 
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru Umum');
         
+<<<<<<< HEAD
+                    return Redirect::to('/admin/pendaftaranpemeriksaan');
+                }else{
+                    toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Baru Umum');
+        
+                    return Redirect::to('/admin/pendaftaranpemeriksaan');
+=======
                     return redirect()->url('/admin/pendaftaranpemeriksaanpasien');
                 }else{
                     toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Baru Umum');
         
                     return redirect()->url('/admin/pendaftaranpemeriksaanpasien');
+>>>>>>> f8384b348611017e2b7437e54650a57b8b42ed81
                 }
             }
 
@@ -331,11 +356,19 @@ class PendaftaranPemeriksaanController extends Controller
                 {
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Lama Umum');
         
+<<<<<<< HEAD
+                    return Redirect::to('/admin/pendaftaranpemeriksaan');
+                }else{
+                    toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Lama Umum');
+        
+                    return Redirect::to('/admin/pendaftaranpemeriksaan');
+=======
                     return redirect()->url('/admin/pendaftaranpemeriksaanpasien');
                 }else{
                     toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Lama Umum');
         
                     return redirect()->url('/admin/pendaftaranpemeriksaanpasien');
+>>>>>>> f8384b348611017e2b7437e54650a57b8b42ed81
                 }
             }
         }
