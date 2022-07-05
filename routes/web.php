@@ -61,9 +61,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
                 Route::get('/next-antrian', [AntrianController::class, 'nextAntrian'])->name('antrian.next');
 
             // Pendaftaran Pasien
-            Route::resource('pendaftaranpemeriksaanpasien', PendaftaranPemeriksaanController::class);
-                route::get('pendaftaranpemeriksaanpasien', [PendaftaranPemeriksaanController::class,'index']);
-                Route::get('pendaftaranpemeriksaanpasien/{id_poli}/{nama_poli}', [PendaftaranPemeriksaanController::class, 'pendaftaran']);
+            Route::resource('pendaftaranpemeriksaan', PendaftaranPemeriksaanController::class);
+                Route::get('pendaftaranpemeriksaan/{id_poli}/{nama_poli}', [PendaftaranPemeriksaanController::class, 'pendaftaran']);
                 Route::post('/autocomplete-search', [PendaftaranPemeriksaanController::class, 'autocompleteSearch'])->name('autocomplete.pasien');
                 Route::get('/pendaftaran-dokter', [PendaftaranPemeriksaanController::class, 'regisDokterFbase']);
             // Dokter
