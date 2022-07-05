@@ -19,7 +19,7 @@
 
 <div class="page-title-right">
     <ol class="breadcrumb m-0">
-        <li class="breadcrumb-item"><a href="{{ route('admin.pendaftaran-pemeriksaan.index') }}">Pendaftaran Pemeriksaan</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.pendaftaranpemeriksaan.index') }}">Pendaftaran Pemeriksaan</a></li>
         <li class="breadcrumb-item active">{{$nama_poli}}</li>
     </ol>
 </div>
@@ -60,7 +60,7 @@
                         @endforeach
 
                         @endif
-                        <form method="POST" action={{ route('admin.pendaftaran-pemeriksaan.store') }}>
+                        <form method="POST" action={{ route('admin.pendaftaranpemeriksaan.store') }}>
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
@@ -209,7 +209,7 @@
                         </form>
                     </div>
                     <div class="tab-pane" id="profile1" role="tabpanel">
-                        <form method="POST" action={{ route('admin.pendaftaran-pemeriksaan.store') }}>
+                        <form method="POST" action={{ route('admin.pendaftaranpemeriksaan.store') }}>
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
