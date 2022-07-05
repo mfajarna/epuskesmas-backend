@@ -483,4 +483,292 @@ class PendaftaranPemeriksaanController extends Controller
 
             return response()->json('Sukses');
     }
+
+    public function postAction(Request $request)
+    {
+
+        // Variable's needed
+        $id_poli = $request->id_poli;
+        $jenis_kunjungan = $request->jenis_kunjungan;
+        $jenis_kunjungan_lama = $request->jenis_kunjungan_lama;
+        $status = $request->status;
+        $id_pasien_lama = $request->id_pasien_lama;
+        $no_antrian = $request->no_antrian;
+        $nama_dokter = $request->nama_dokter;
+        $data = $request->all();   
+        $find_code = ModelPasien::max('kode_pasien');
+        
+        if($find_code)
+        {
+            $value_code = substr($find_code,10);
+            $code = (int) $value_code;
+            $code = $code + 1;
+            $kode_pasien = "PASIEN/".str_pad($code,4,"0",STR_PAD_LEFT);
+        }else{
+            $kode_pasien = "PASIEN/0001";
+        }
+
+
+        // Pendaftaran bpjs
+        if($status == "bpjs")
+        {
+            if($jenis_kunjungan == "kunjungan_baru" && $jenis_kunjungan_lama == "")
+            {
+                $validate = $request->validate([
+                    'no_antrian'    => 'required',
+                    'tgl_periksa'   => 'required',
+                    'nama_pasien'   => 'required|string',
+                    'umur'          => 'required|numeric',
+                    'alamat'        => 'required|string',
+                    'jenis_kelamin' => 'required|string',
+                    'no_handphone'  => 'required|string',
+                    'email'         => 'required|email|unique:users,email',
+                    'no_ktp'        => 'required|unique:tb_pasien,no_ktp',
+                
+                ]);
+    
+                $user = new User();
+                $user->name = $validate['nama_pasien'];
+                $user->username = $validate['nama_pasien'];
+                $user->email = $validate['email'];
+                $user->password = Hash::make('Pasien@123');
+                $user->created_at = date('Y-m-d h:i:s');
+                $user->role = "pasien";
+                $user->save();
+    
+                $pasien = new ModelPasien();
+                $pasien->kode_pasien = $kode_pasien;
+                $pasien->nama_lengkap = $validate['nama_pasien'];
+                $pasien->alamat = $validate['alamat'];
+                $pasien->jenis_kelamin = $validate['jenis_kelamin'];
+                $pasien->no_ktp = $validate['no_ktp'];
+                $pasien->no_handphone = $validate['no_handphone'];
+                $pasien->foto_ktp = null;
+                $pasien->is_verification = true;
+                $pasien->email = $validate['email'];
+                $pasien->password = Hash::make('Pasien@123');
+                $pasien->is_active = true;
+                $pasien->device_token = "null";
+                $pasien->is_verificationktp = false;
+                $pasien->save();
+    
+                $pemeriksaan = new ModelPemeriksaan();
+                $pemeriksaan->id_pasien = $pasien->id;
+                $pemeriksaan->umur = $validate['umur'];
+                $pemeriksaan->no_urut = $validate['no_antrian'];
+                $pemeriksaan->status = $status;
+                $pemeriksaan->corrected_by = Auth::user()->id;
+                $pemeriksaan->kunjungan = $jenis_kunjungan;
+                $pemeriksaan->id_poli = $id_poli;
+                $pemeriksaan->status_pemeriksaan = "MENUNGGU";
+                $pemeriksaan->save();
+
+
+                // check if verifikasi was added
+                $verifikasiKtp = ModelStatusVerifikasiKtp::where('pasien_id', $pasien->id)->first();
+
+                if(!$verifikasiKtp)
+                {
+                    $modelVerifikasi = new ModelStatusVerifikasiKtp();
+                    $modelVerifikasi->pasien_id = $pasien->id;
+                    $modelVerifikasi->status ="Belum Upload KTP";
+                    $modelVerifikasi->save();
+                }
+    
+                if($user && $pasien && $pemeriksaan && $modelVerifikasi)
+                {
+                    $creds = [
+                        'email' => $validate['email'],
+                        'password' => "Pasien@123",
+                    ];
+        
+                    $createAuth = $this->auth->createUser($creds);
+                    $uid = $createAuth->uid;
+        
+                    $userProperties = [
+                        'email' => $validate['email'],
+                        'password' => "Pasien@123",
+                        'displayName' => $validate['nama_pasien'],
+                        'uid'   => $uid
+                    ];
+        
+                  
+                    $this->database->getReference('/users/'.$uid.'/')->set($userProperties);  
+
+
+                    toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru');
+        
+
+                    return redirect()->route('/');
+                }else{
+                    toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Baru');
+        
+                    return redirect()->route('/');
+
+                 
+                }
+            }
+    
+            if($jenis_kunjungan_lama == "kunjungan_lama")
+            {
+                $validate = $request->validate([
+                    'no_antrian'    => 'required',
+                    'tgl_periksa'   => 'required',
+                ]);
+    
+                $pemeriksaan = new ModelPemeriksaan();
+                $pemeriksaan->id_pasien = $id_pasien_lama;
+                $pemeriksaan->no_urut = $validate['no_antrian'];
+                $pemeriksaan->status = $status;
+                $pemeriksaan->corrected_by = Auth::user()->id;
+                $pemeriksaan->kunjungan = $jenis_kunjungan_lama;
+                $pemeriksaan->id_poli = $id_poli;
+                $pemeriksaan->status_pemeriksaan = "MENUNGGU";
+                $pemeriksaan->save();
+    
+                if($pemeriksaan)
+                {
+                    toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Lama');
+        
+
+                    return redirect()->route('/');
+                }else{
+                    toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Lama');
+        
+                    return redirect()->route('/');
+
+                }
+            }
+        }
+
+        // Pendaftaran umum
+        if($status == "umum")
+        {
+            if($jenis_kunjungan == "kunjungan_baru" && $request->jenis_kunjungan_lama_umum == "")
+            {
+                $validate = $request->validate([
+                    'no_antrian'    => 'required',
+                    'tgl_periksa'   => 'required',
+                    'nama_pasien'   => 'required|string',
+                    'umur'          => 'required|numeric',
+                    'alamat'        => 'required|string',
+                    'jenis_kelamin' => 'required|string',
+                    'no_handphone'  => 'required|string',
+                    'email'         => 'required|email|unique:users,email',
+                    'no_ktp'        => 'required|unique:tb_pasien,no_ktp',
+                
+                ]);
+    
+                $user = new User();
+                $user->name = $validate['nama_pasien'];
+                $user->username = $validate['nama_pasien'];
+                $user->email = $validate['email'];
+                $user->password = Hash::make('Pasien@123');
+                $user->created_at = date('Y-m-d h:i:s');
+                $user->role = "pasien";
+                $user->save();
+    
+                $pasien = new ModelPasien();
+                $pasien->kode_pasien = $kode_pasien;
+                $pasien->nama_lengkap = $validate['nama_pasien'];
+                $pasien->alamat = $validate['alamat'];
+                $pasien->jenis_kelamin = $validate['jenis_kelamin'];
+                $pasien->no_ktp = $validate['no_ktp'];
+                $pasien->no_handphone = $validate['no_handphone'];
+                $pasien->foto_ktp = null;
+                $pasien->is_verification = true;
+                $pasien->email = $validate['email'];
+                $pasien->password = Hash::make('Pasien@123');
+                $pasien->is_active = true;
+                $pasien->device_token = "null";
+                $pasien->is_verificationktp = false;
+                $pasien->save();
+    
+                $pemeriksaan = new ModelPemeriksaan();
+                $pemeriksaan->id_pasien = $pasien->id;
+                $pemeriksaan->umur = $validate['umur'];
+                $pemeriksaan->no_urut = $validate['no_antrian'];
+                $pemeriksaan->status = $status;
+                $pemeriksaan->corrected_by = Auth::user()->id;
+                $pemeriksaan->kunjungan = $jenis_kunjungan;
+                $pemeriksaan->id_poli = $id_poli;
+                $pemeriksaan->status_pemeriksaan = "MENUNGGU";
+                $pemeriksaan->save();
+
+                // check if verifikasi was added
+                $verifikasiKtp = ModelStatusVerifikasiKtp::where('pasien_id', $pasien->id)->first();
+
+                if(!$verifikasiKtp)
+                {
+                    $modelVerifikasi = new ModelStatusVerifikasiKtp();
+                    $modelVerifikasi->pasien_id = $pasien->id;
+                    $modelVerifikasi->status ="Belum Upload KTP";
+                    $modelVerifikasi->save();
+                }
+                    
+    
+                if($user && $pasien && $pemeriksaan && $modelVerifikasi)
+                {
+
+                    $creds = [
+                        'email' => $validate['email'],
+                        'password' => "Pasien@123",
+                    ];
+        
+                    $createAuth = $this->auth->createUser($creds);
+                    $uid = $createAuth->uid;
+        
+                    $userProperties = [
+                        'email' => $validate['email'],
+                        'password' => "Pasien@123",
+                        'displayName' => $validate['nama_pasien'],
+                        'uid'   => $uid
+                    ];
+        
+                  
+                    $this->database->getReference('/users/'.$uid.'/')->set($userProperties);  
+
+                    toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru Umum');
+        
+
+                    return Redirect::to('/admin/pendaftaranpemeriksaan');
+                }else{
+                    toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Baru Umum');
+        
+                    return Redirect::to('/admin/pendaftaranpemeriksaan');
+
+                }
+            }
+
+            if($request->jenis_kunjungan_lama_umum == "kunjungan_lama")
+            {
+                $validate = $request->validate([
+                    'no_antrian'    => 'required',
+                    'tgl_periksa'   => 'required',
+                ]);
+    
+                $pemeriksaan = new ModelPemeriksaan();
+                $pemeriksaan->id_pasien = $request->id_pasien_lama_umum;
+                $pemeriksaan->no_urut = $validate['no_antrian'];
+                $pemeriksaan->status = $status;
+                $pemeriksaan->corrected_by = Auth::user()->id;
+                $pemeriksaan->kunjungan = $request->jenis_kunjungan_lama_umum;
+                $pemeriksaan->id_poli = $id_poli;
+                $pemeriksaan->status_pemeriksaan = "MENUNGGU";
+                $pemeriksaan->save();
+    
+                if($pemeriksaan)
+                {
+                    toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Lama Umum');
+        
+
+                    return Redirect::to('/admin/pendaftaranpemeriksaan');
+                }else{
+                    toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Lama Umum');
+        
+                    return Redirect::to('/admin/pendaftaranpemeriksaan');
+                }
+            }
+        }
+    }
 }
