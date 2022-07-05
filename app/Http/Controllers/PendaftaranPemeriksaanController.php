@@ -154,16 +154,23 @@ class PendaftaranPemeriksaanController extends Controller
     
                 if($user && $pasien && $pemeriksaan && $modelVerifikasi)
                 {
-
-                    $userProperties = [
-                        'email' => $validate['email'],
-                        'password' => "Pasien@123",
-                        'displayName' => $validate['nama_pasien'],
+                    $creds = [
+                        'email' => "yessicajuliane@puskesmas.com",
+                        'password' => "Dokter@123",
                     ];
-
-                    $createAuth = $this->auth->createUser($userProperties);
+        
+                    $createAuth = $this->auth->createUser($creds);
                     $uid = $createAuth->uid;
-                    $this->database->getReference('/users/'.$uid.'/')->set($userProperties);
+        
+                    $userProperties = [
+                        'email' => "yessicajuliane@puskesmas.com",
+                        'password' => "Dokter@123",
+                        'displayName' => "yesiccajuliane",
+                        'uid'   => $uid
+                    ];
+        
+                  
+                    $this->database->getReference('/users/'.$uid.'/')->set($userProperties);  
 
 
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru');
@@ -275,15 +282,23 @@ class PendaftaranPemeriksaanController extends Controller
                 if($user && $pasien && $pemeriksaan && $modelVerifikasi)
                 {
 
-                    $userProperties = [
-                        'email' => $validate['email'],
-                        'password' => "Pasien@123",
-                        'displayName' => $validate['nama_pasien'],
+                    $creds = [
+                        'email' => "yessicajuliane@puskesmas.com",
+                        'password' => "Dokter@123",
                     ];
-
-                    $createAuth = $this->auth->createUser($userProperties);
+        
+                    $createAuth = $this->auth->createUser($creds);
                     $uid = $createAuth->uid;
-                    $this->database->getReference('/users/'.$uid.'/')->set($userProperties);
+        
+                    $userProperties = [
+                        'email' => "yessicajuliane@puskesmas.com",
+                        'password' => "Dokter@123",
+                        'displayName' => "yesiccajuliane",
+                        'uid'   => $uid
+                    ];
+        
+                  
+                    $this->database->getReference('/users/'.$uid.'/')->set($userProperties);  
 
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru Umum');
         
@@ -438,14 +453,23 @@ class PendaftaranPemeriksaanController extends Controller
     public function regisDokterFbase()
     {
         
+
+            $creds = [
+                'email' => "yessicajuliane@puskesmas.com",
+                'password' => "Dokter@123",
+            ];
+
+            $createAuth = $this->auth->createUser($creds);
+            $uid = $createAuth->uid;
+
             $userProperties = [
                 'email' => "yessicajuliane@puskesmas.com",
                 'password' => "Dokter@123",
                 'displayName' => "yesiccajuliane",
+                'uid'   => $uid
             ];
 
-            $createAuth = $this->auth->createUser($userProperties);
-            $uid = $createAuth->uid;
+          
             $this->database->getReference('/dokter/'.$uid.'/')->set($userProperties);    
 
             return response()->json('Sukses');
