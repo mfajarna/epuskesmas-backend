@@ -1,0 +1,578 @@
+[05-Jul-2022 12:31:44 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.29. in /home/u1806321/public_html/vendor/composer/platform_check.php on line 24
+[05-Jul-2022 12:32:34 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.29. in /home/u1806321/public_html/vendor/composer/platform_check.php on line 24
+[05-Jul-2022 19:33:52 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:33:53 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:33:53 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:33:54 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:34:30 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:34:49 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:35:19 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:35:21 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:36:45 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:44:12 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:49:25 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 12:50:02 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.29. in /home/u1806321/public_html/vendor/composer/platform_check.php on line 24
+[05-Jul-2022 12:52:26 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.4.29. in /home/u1806321/public_html/vendor/composer/platform_check.php on line 24
+[05-Jul-2022 19:52:37 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:55:30 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[05-Jul-2022 19:55:31 Asia/Jakarta] PHP Fatal error:  Uncaught ReflectionException: Class "view" does not exist in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#15 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#17 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build()
+#1 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve()
+#2 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve()
+#3 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make()
+#4 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make()
+#5 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(198): Illuminate\Container\Container->offsetGet()
+#6 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\Support\Facades\Facade::resolveFacadeInstance()
+#7 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\Support\Facades\Facade::getFacadeRoot()
+#8 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#9 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(598): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#10 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(579): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#11 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(490): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#12 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(356): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#13 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Exceptions\Handler->render()
+#14 /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#16 {main}
+  thrown in /home/u1806321/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
