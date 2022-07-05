@@ -177,11 +177,11 @@ class PendaftaranPemeriksaanController extends Controller
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru');
         
 
-                    return Redirect::to('admin/pendaftaranpemeriksaan/');
+                    return Redirect::to('/admin/dashboard');
                 }else{
                     toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Baru');
         
-                    return Redirect::to('admin/pendaftaranpemeriksaan/');
+                    return Redirect::to('/admin/dashboard');
 
                  
                 }
@@ -209,11 +209,11 @@ class PendaftaranPemeriksaanController extends Controller
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Lama');
         
 
-                    return Redirect::to('admin/pendaftaranpemeriksaan/');
+                    return Redirect::to('/admin/dashboard');
                 }else{
                     toast()->error('Gagal Membuat Pendaftaran Pemeriksaan Pasien Lama');
         
-                    return Redirect::to('admin/pendaftaranpemeriksaan/');
+                    return Redirect::to('/admin/dashboard');
 
                 }
             }
