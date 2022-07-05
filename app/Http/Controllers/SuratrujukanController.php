@@ -101,6 +101,7 @@ class SuratrujukanController extends Controller
             toast()->error('Gagal Membuat Surat Rujukan,');
         
             return redirect()->route('admin.suratrujukan.index');
+            //add
         }
 
         // return $pdf->download($nameFile);
