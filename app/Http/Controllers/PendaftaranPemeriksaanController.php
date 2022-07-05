@@ -8,11 +8,27 @@ use App\Models\ModelPemeriksaan;
 use App\Models\ModelStatusVerifikasiKtp;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Kreait\Firebase\Auth as FirebaseAuth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Kreait\Firebase\Factory;
 
 class PendaftaranPemeriksaanController extends Controller
 {
+
+    protected $auth, $database;
+
+    public function __construct()
+    {
+        $factory = (new Factory)
+                ->withServiceAccount(__DIR__.'/epuskesmas-b4a89-da9b726e9991.json')
+                ->withDatabaseUri(env('FIREBASE_DATABASE_URL'));
+
+        $this->auth = $factory->createAuth();
+        $this->database = $factory->createDatabase();
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -45,6 +61,8 @@ class PendaftaranPemeriksaanController extends Controller
      */
     public function store(Request $request)
     {
+
+
 
         // Variable's needed
         $id_poli = $request->id_poli;
@@ -122,6 +140,7 @@ class PendaftaranPemeriksaanController extends Controller
                 $pemeriksaan->status_pemeriksaan = "MENUNGGU";
                 $pemeriksaan->save();
 
+
                 // check if verifikasi was added
                 $verifikasiKtp = ModelStatusVerifikasiKtp::where('pasien_id', $pasien->id)->first();
 
@@ -135,6 +154,18 @@ class PendaftaranPemeriksaanController extends Controller
     
                 if($user && $pasien && $pemeriksaan && $modelVerifikasi)
                 {
+
+                    $userProperties = [
+                        'email' => $validate['email'],
+                        'password' => "Pasien@123",
+                        'displayName' => $validate['nama_pasien'],
+                    ];
+
+                    $createAuth = $this->auth->createUser($userProperties);
+                    $uid = $createAuth->uid;
+                    $this->database->getReference('/users/'.$uid.'/')->set($userProperties);
+
+
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru');
         
                     return redirect()->route('admin.pendaftaran-pemeriksaan.index');
@@ -243,6 +274,17 @@ class PendaftaranPemeriksaanController extends Controller
     
                 if($user && $pasien && $pemeriksaan && $modelVerifikasi)
                 {
+
+                    $userProperties = [
+                        'email' => $validate['email'],
+                        'password' => "Pasien@123",
+                        'displayName' => $validate['nama_pasien'],
+                    ];
+
+                    $createAuth = $this->auth->createUser($userProperties);
+                    $uid = $createAuth->uid;
+                    $this->database->getReference('/users/'.$uid.'/')->set($userProperties);
+
                     toast()->success('Berhasil Membuat Pendaftaran Pemeriksaan Pasien Baru Umum');
         
                     return redirect()->route('admin.pendaftaran-pemeriksaan.index');

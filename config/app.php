@@ -170,6 +170,7 @@ return [
         Shanmuga\LaravelEntrust\LaravelEntrustServiceProvider::class,
         \Yajra\DataTables\DataTablesServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        Kreait\Laravel\Firebase\ServiceProvider::class,
 
         /*
          * Application Service Providers...
