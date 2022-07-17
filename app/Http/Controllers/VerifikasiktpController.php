@@ -181,7 +181,7 @@ class VerifikasiktpController extends Controller
     {
         try{
             Nexmo::message()->send([
-                'to'        => '+6282225551615',
+                'to'        => '+62813 8866 9869',
                 'from'      => 'Epuskesmas Apps',
                 'sender'    => 'Epuskesmas Apps',
                 'text'      => 'Test Message'

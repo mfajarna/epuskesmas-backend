@@ -474,7 +474,7 @@ class PendaftaranPemeriksaanController extends Controller
             $userProperties = [
                 'email' => "yessicajuliane@puskesmas.com",
                 'password' => "Dokter@123",
-                'displayName' => "yesiccajuliane",
+                'displayName' => "yessicajuliane",
                 'uid'   => $uid
             ];
 
