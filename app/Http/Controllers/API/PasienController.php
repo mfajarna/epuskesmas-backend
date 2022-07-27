@@ -185,12 +185,15 @@ class PasienController extends Controller
 
             if($request->file('file'))
             {
-                $file = $request->file->store('assets/ktp', 'public');
-
+                // $file = $request->file->store('assets/ktp', 'public');
+                $image = $request->file('file');
+                $image_name = $image->getClientOriginalName();
+                $image->storeAs('images',$image_name, 'public_uploads');
+                $image_path = "/images/" . $image_name;
 
 
                 $ktp = ModelPasien::findOrFail(Auth::user()->id);
-                $ktp->foto_ktp = $file;
+                $ktp->foto_ktp = $image_path;
 
                 $ktp->update();
 
@@ -207,7 +210,7 @@ class PasienController extends Controller
     
                     $statusKtp->save();
                 }
-                return ResponseFormatter::success([$file],'File successfully uploaded');
+                return ResponseFormatter::success([$image_path],'File successfully uploaded');
             }
         }catch(Exception $e)
         {
