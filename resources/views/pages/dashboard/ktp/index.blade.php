@@ -130,10 +130,10 @@
                     {
                         console.log('res detail ktp', res);
                         var text = res[0].pasien.foto_ktp;
-                        var sub = text.substring(30);
+                        var sub = text.substring(31);
                         
 
-                        var link = 'https://puskeslinggarjati.com/public/';
+                        var link = 'https://puskeslinggarjati.com/public/uploads/';
                         var linkPhoto = link+sub;
 
                         console.log(linkPhoto)
