@@ -159,19 +159,27 @@ class VerifikasiktpController extends Controller
         $substr = substr($no_handphone, 1);
 
         $phone = '+62'.$substr;
-     
 
         if($model)
         {
-            Nexmo::message()->send([
-                'to'        => $phone,
-                'from'      => 'Epuskesmas Apps',
-                'sender'    => 'Epuskesmas Apps',
-                'text'      => 'Epuskesmas Apps - Selamat KTP Anda telah diverifikasi'
-            ]);
+            $curl = curl_init();
 
-            return response()->json($model);
-            // return toast()->success('Berhasil update status KTP');
+            curl_setopt_array($curl, array(
+              CURLOPT_URL => 'https://console.zenziva.net/reguler/api/sendsms/',
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => '',
+              CURLOPT_MAXREDIRS => 10,
+              CURLOPT_TIMEOUT => 0,
+              CURLOPT_FOLLOWLOCATION => true,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => 'POST',
+              CURLOPT_POSTFIELDS => array('userkey' => '4306ac80483b','passkey' => '2865ade1205108aa0cace78b','to' => $no_handphone,'message' => 'E-Puskesmas - Selamat Akun Anda Telah Terverifikasi'),
+            ));
+            
+            $response = curl_exec($curl); 
+            curl_close($curl);
+
+            return response()->json($response);
         }
 
         
@@ -180,14 +188,24 @@ class VerifikasiktpController extends Controller
     public function sendNotificationSms()
     {
         try{
-            Nexmo::message()->send([
-                'to'        => '+62813 8866 9869',
-                'from'      => 'Epuskesmas Apps',
-                'sender'    => 'Epuskesmas Apps',
-                'text'      => 'Test Message'
-            ]);
-    
-        echo "Text Send";
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+              CURLOPT_URL => 'https://console.zenziva.net/reguler/api/sendsms/',
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => '',
+              CURLOPT_MAXREDIRS => 10,
+              CURLOPT_TIMEOUT => 0,
+              CURLOPT_FOLLOWLOCATION => true,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => 'POST',
+              CURLOPT_POSTFIELDS => array('userkey' => '4306ac80483b','passkey' => '2865ade1205108aa0cace78b','to' => '081388669869','message' => 'E-Puskesmas - Selamat Akun Anda Telah Terverifikasi'),
+            ));
+            
+            $response = curl_exec($curl);
+            
+            curl_close($curl);
+            echo $response;
         }catch(Exception $e)
         {
             echo $e->getMessage();
