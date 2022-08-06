@@ -92,14 +92,12 @@
                         </a>
                     </li>
 
-
-
                     <li class="menu-title mt-2" data-key="t-components">Konfigurasi</li>
 
                     <li>
-                        <a href="javascript: void(0);">
+                        <a href="{{ route('admin.uploadinformasikesehatan.index') }}">
                             <i data-feather="sliders"></i>
-                            <span data-key="t-components">Website Setting</span>
+                            <span data-key="t-components">Upload Informasi Kesehatan</span>
                         </a>
                     </li>
 

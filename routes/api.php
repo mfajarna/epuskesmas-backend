@@ -5,6 +5,7 @@ use App\Http\Controllers\API\DokterController;
 use App\Http\Controllers\API\PasienController;
 use App\Http\Controllers\API\PendaftaranPemeriksaanController;
 use App\Http\Controllers\API\SuratrujukanController;
+use App\Http\Controllers\API\UploadKontenController;
 use App\Models\Pasien_m;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,8 @@ use Illuminate\Support\Facades\Route;
     Route::get('dokter/riwayatkesehatanpasien', [DokterController::class, 'riwayatKesehatanPasien']);
     Route::get('dokter/getPemeriksaan', [DokterController::class, 'getPemeriksaan']);
     Route::get('dokter/riwayatobatpasien', [DokterController::class, 'riwayatObatPasien']);
+
+    Route::get('getKontenInformasi', [UploadKontenController::class, 'getDataKonten']);
 
     Route::middleware('auth:sanctum')->group(function(){
 
