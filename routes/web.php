@@ -90,5 +90,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
             
             // Upload Informasi Kesehatan
             Route::resource('uploadinformasikesehatan', UploadKontenController::class);
+            Route::get('getKontenInformasi', [UploadKontenController::class, 'getKonten'])->name('uploadinformasikesehatan.getKonten');
+            Route::get('delete-informasikesehatan', [UploadKontenController::class, 'deleteKonten']);
+            Route::put('update-informasikesehatan', [UploadKontenController::class, 'updateKonten'])->name('uploadinformasikesehatan.updateKonten');
         }
 );

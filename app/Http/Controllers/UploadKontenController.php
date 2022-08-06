@@ -23,7 +23,8 @@ class UploadKontenController extends Controller
             {
                 $button = "<div class='d-flex gap-3 align-center'>";
 
-                $button .= "<a href='/admin/remove-poli?id=". $tipe->id ."' name='delete' id='" . $tipe->id ."' class='button text-danger'><i class='mdi mdi-delete font-size-18'></i></a>";
+                $button .= "<a href='/admin/delete-informasikesehatan?id=". $tipe->id ."' name='delete' id='" . $tipe->id ."' class='button text-danger'><i class='mdi mdi-delete font-size-18'></i></a>";
+                $button .= "<a href='javascript:void(0)' id='btn_update' class='button text-primary'><i class='mdi mdi-pencil font-size-18'></i></a>";
 
                 $button .= "</div>";
 
@@ -137,5 +138,62 @@ class UploadKontenController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function deleteKonten(Request $request)
+    {
+        $id = $request->id;
+
+        $model = ModelUploadKonten::findOrFail($id);
+        $model->delete();
+
+        if($model)
+        {
+            toast()->success('Berhasil Hapus Konten Baru');
+        
+            return redirect()->route('admin.uploadinformasikesehatan.index');
+        }else{
+            toast()->error('Gagal Hapus Konten');
+        
+            return redirect()->route('admin.uploadinformasikesehatan.index');
+        }
+    }
+
+    public function getKonten(Request $request)
+    {
+        $id = $request->id;
+        $model = ModelUploadKonten::findOrFail($id);
+
+        return response()->json($model);
+    }
+
+    public function updateKonten(Request $request)
+    {
+        $id = $request->id;
+        $model = ModelUploadKonten::findOrFail($id);
+        $model->judul_konten = $request->judul_konten;
+        $model->deskripsi_konten = $request->deskripsi_konten;
+
+        if($request->hasFile('path_gambar'))
+        {
+            $image = $request->file('path_gambar');
+            $image_name = $image->getClientOriginalName();
+            $image->storeAs('images',$image_name, 'public_uploads');
+            $image_path = "/images/" . $image_name;
+    
+            $model->path_gambar = $image_path;
+        }
+        $model->update();
+
+        if($model)
+        {
+            toast()->success('Berhasil Update Konten Baru');
+        
+            return redirect()->route('admin.uploadinformasikesehatan.index');
+        }else{
+            toast()->error('Gagal Update Konten');
+        
+            return redirect()->route('admin.uploadinformasikesehatan.index');
+        }
     }
 }
