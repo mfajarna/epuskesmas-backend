@@ -17,6 +17,7 @@
 @section('content')
 
 @include('modal.uploadkonten.index')
+@include('modal.uploadkonten.update')
 <div class="row">
         <div class="col-12">
             <div class="card">
@@ -100,6 +101,29 @@
                 ]
             })
 
+            t.on('click', '#btn_update', function()
+            {
+                $('#ModalViewUpdate').modal('show');
+                $tr = $(this).closest('tr')
+                    if($($tr).hasClass('child'))
+                    {
+                            $tr = $tr.prev('.parent')
+                    }
+                    
+                    var data = t.row($tr).data();
+                    var id = data.id;
+
+                    $.ajax({
+                        method: 'get',
+                        url: '{{ route("admin.uploadinformasikesehatan.getKonten") }}',
+                        data: {id:id},
+                        success: function(res){
+                                $('#id').val(res.id);
+                                $('#judul_konten_update').val(res.judul_konten);
+                                $('textarea#deskripsi_konten_update').val(res.deskripsi_konten);
+                        }
+                    })
+            })
         
         })
 
