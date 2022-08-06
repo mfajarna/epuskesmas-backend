@@ -10,6 +10,7 @@ use App\Http\Controllers\PendaftaranPemeriksaanController;
 use App\Http\Controllers\Poli\PoliController;
 use App\Http\Controllers\RiwayatPasienController;
 use App\Http\Controllers\SuratrujukanController;
+use App\Http\Controllers\UploadKontenController;
 use App\Http\Controllers\VerifikasiktpController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -86,5 +87,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'],
             // Pemeriksaan Lab
             Route::resource('pemeriksaanlab', PemeriksaanLaboratoriumController::class);
                 Route::get('/form-pemeriksaan-lab', [PemeriksaanLaboratoriumController::class,'printFormulirPemeriksaanLab']);
+            
+            // Upload Informasi Kesehatan
+            Route::resource('uploadinformasikesehatan', UploadKontenController::class);
         }
 );
