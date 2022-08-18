@@ -188,6 +188,11 @@ class PasienController extends Controller
 
             ]);
 
+            $modelVerifikasi = new ModelStatusVerifikasiKtp();
+            $modelVerifikasi->pasien_id = $pasien->id;
+            $modelVerifikasi->status ="Belum Upload KTP";
+            $modelVerifikasi->save();
+
             $tokenResult = $pasien->createToken('authToken')->plainTextToken;
 
             return ResponseFormatter::success([
