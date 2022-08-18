@@ -10,8 +10,10 @@ use App\Models\DetailPasienModel;
 use App\Models\ModelHasilPemeriksaan;
 use App\Models\ModelPasien;
 use App\Models\ModelStatusVerifikasiKtp;
+use App\Models\Pasien_m;
 use App\Models\User;
 use Exception;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -66,6 +68,87 @@ class PasienController extends Controller
         }
     }
 
+    public function sendOtp(Request $request)
+    {
+        try{
+            $phone_number = $request->phone_number;
+
+            $model = ModelPasien::where('no_handphone', $phone_number)
+                                ->where('is_verified', 0)
+                                ->get();
+            $otp = $model[0]['otp_number'];
+
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+              CURLOPT_URL => 'https://console.zenziva.net/reguler/api/sendsms/',
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => '',
+              CURLOPT_MAXREDIRS => 10,
+              CURLOPT_TIMEOUT => 0,
+              CURLOPT_FOLLOWLOCATION => true,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => 'POST',
+              CURLOPT_POSTFIELDS => array('userkey' => '4306ac80483b','passkey' => '2865ade1205108aa0cace78b','to' => $phone_number,'message' => 'E-Puskesmas - No OTP registrasi adalah '. $otp .' , Tolong untuk menjaga privasi akun anda!'),
+            ));
+            
+            $response = curl_exec($curl);
+            
+            curl_close($curl);
+
+            if($response)
+            {
+                return ResponseFormatter::success($response, 'success');
+            }else{
+                return ResponseFormatter::error($response, 500);
+            }
+
+            
+
+        }catch(Exception $e)
+        {
+            return ResponseFormatter::error([
+                'message' => 'Something went wrong while register pasien',
+                'error' => $e->getMessage()
+            ], 'Something went wrong', 500);
+        }
+    }
+
+    public function verificationOtp(Request $request)
+    {
+        try{
+
+            $otp = $request->otp_number;
+            $no_handphone = $request->no_handphone;
+
+            $model = ModelPasien::where('no_handphone', $no_handphone)->where('is_verified', 0)->get();
+            $otp_db = $model[0]['otp_number'];
+            
+
+            if($otp_db == $otp)
+            {
+               $pasien = ModelPasien::where('no_handphone', $no_handphone)->first();
+               $pasien->is_verified = 1;
+               $pasien->update();
+
+               $res = "Berhasil";
+            }else{
+                $res = 'failed otp not same';
+            }
+
+            return ResponseFormatter::success($res, 'success');
+
+        }catch(Exception $e)
+        {
+            {
+                return ResponseFormatter::error([
+                    'message' => 'Something went wrong while register pasien',
+                    'error' => $e->getMessage()
+                ], 'Something went wrong', 500);
+            }
+        }
+    }
+
     // Register Akun Pasien
     public function register(Request $request)
     {
@@ -84,7 +167,9 @@ class PasienController extends Controller
                 
             ]);
 
-            // $path_foto_ktp = $request->file('foto_ktp')->store('assets/file/foto_ktp','public');
+            $rand_otp = rand(1111,9999);
+
+            // // $path_foto_ktp = $request->file('foto_ktp')->store('assets/file/foto_ktp','public');
 
             $pasien = ModelPasien::create([
                 'kode_pasien'       => $validation['kode_pasien'],
@@ -98,7 +183,8 @@ class PasienController extends Controller
                 'password'          => Hash::make($validation['password']),
                 'is_verification'   => true,
                 // 'foto_ktp'          => $path_foto_ktp,
-                'device_token'      => $validation['device_token']
+                'device_token'      => $validation['device_token'],
+                'otp_number'        => $rand_otp
 
             ]);
 
@@ -109,6 +195,10 @@ class PasienController extends Controller
                 'token_type' => 'Bearer',
                 'data_pasien' => $pasien
             ], 'Succesfully Registered Tenant!');
+
+    
+
+          
         }catch(Exception $e)
         {
             return ResponseFormatter::error([

@@ -29,6 +29,8 @@ use Illuminate\Support\Facades\Route;
 
     // Login Pasien
     Route::post('pasien/login', [PasienController::class,'login']);
+    Route::get('pasien/sendOtp', [PasienController::class,'sendOtp']);
+    Route::post('pasien/verificationOtp', [PasienController::class, 'verificationOtp']);
 
     // Login Dokter
     Route::post('dokter/login', [DokterController::class, 'login']);
